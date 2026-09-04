@@ -58,7 +58,10 @@ button:disabled{opacity:.35;cursor:not-allowed}
   <div class="top">
     <a href="ARCHIVES_Silent_Running.html">← Novel</a>
     <span id="modeLbl">SLOT · 3mm</span>
-    <a href="index.html">Deck Zero</a>
+    <div style="display:flex;gap:.4rem;align-items:center">
+      <div data-dz-site-menu></div>
+      <a href="index.html">Home</a>
+    </div>
   </div>
   <div class="stage" id="stage">
     <div class="view slot on" id="vSlot"></div>
@@ -120,5 +123,6 @@ button:disabled{opacity:.35;cursor:not-allowed}
   paint();
 })();
 </script>
+<script src="dz-site-menu.js"></script>
 </body>
 </html>

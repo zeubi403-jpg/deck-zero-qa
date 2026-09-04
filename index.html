@@ -710,6 +710,7 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
       <button type="button" data-set-lang="en" class="on">EN</button>
       <button type="button" data-set-lang="fr">FR</button>
     </div>
+    <div data-dz-site-menu></div>
   </div>
 </header>
 <main class="wrap">
@@ -740,28 +741,22 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
     <strong id="resumeRead">READ 0 / 10</strong>
   </div>
 
-  <a class="cta" id="enter" href="DECK_ZERO_Pitch.html">
-    <div class="label" data-lang="en">Open dossier</div>
-    <div class="label" data-lang="fr">Ouvrir le dossier</div>
-    <div class="desc" data-lang="en">Cleared panels only. Advance the log. Expand a year when the brief requires depth.</div>
-    <div class="desc" data-lang="fr">Volets autorisés uniquement. Avancer le log. Développer une année si le brief exige la profondeur.</div>
-    <div class="how" data-lang="en">← → · drag · develop entry · hold glass · AUD / LO</div>
-    <div class="how" data-lang="fr">← → · glisser · développer · maintenir le verre · AUD / LO</div>
-  </a>
+  <p class="clearance" style="margin-top:1.1rem" data-lang="en">Choose a surface · Menu (top right) always available</p>
+  <p class="clearance" style="margin-top:1.1rem" data-lang="fr">Choisissez une surface · Menu (en haut à droite) toujours dispo</p>
+  <div data-dz-site-hub></div>
+
   <p class="alt">
     <a id="century" href="DECK_ZERO_Pitch.html#9" data-lang="en">Century appendix →</a>
     <a id="century-fr" href="DECK_ZERO_Pitch.html#9" data-lang="fr">Annexe du siècle →</a>
   </p>
   <p class="foot-clear" data-lang="en">Ashen-Null optical channel · fiber only · not a public network</p>
   <p class="foot-clear" data-lang="fr">Canal optique Ashen-Null · fibre seule · pas un réseau public</p>
-  <p class="foot-clear" style="margin-top:.55rem;opacity:.75" data-lang="en"><a href="ARCHIVES_Silent_Running.html" style="color:inherit">Deep · Vurtek Archives — Silent Running (optional prequel)</a></p>
-  <p class="foot-clear" style="margin-top:.55rem;opacity:.75" data-lang="fr"><a href="ARCHIVES_Silent_Running.html?lang=fr" style="color:inherit">Profond · Archives Vurtek — Silent Running (préquelle optionnelle)</a></p>
 </main>
 <script src="dz-terminal.js"></script>
+<script src="dz-site-menu.js"></script>
 <script>
 (function () {
   const btns = Array.from(document.querySelectorAll("[data-set-lang]"));
-  const enter = document.getElementById("enter");
   const century = document.getElementById("century");
   const centuryFr = document.getElementById("century-fr");
   const linkStatus = document.getElementById("linkStatus");
@@ -782,10 +777,15 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
     document.documentElement.lang = lang;
     document.title = lang === "fr" ? "Deck Zero · Dossier optique" : "Deck Zero · Optical dossier";
     btns.forEach((b) => b.classList.toggle("on", b.dataset.setLang === lang));
-    enter.href = "DECK_ZERO_Pitch.html?lang=" + lang;
     century.href = "DECK_ZERO_Pitch.html?lang=" + lang + "#9";
     centuryFr.href = "DECK_ZERO_Pitch.html?lang=" + lang + "#9";
     try { localStorage.setItem("dz-lang", lang); } catch (_) {}
+    document.querySelectorAll("[data-dz-site-hub],[data-dz-site-menu]").forEach((el) => {
+      el.dataset.dzMounted = "0";
+      el.innerHTML = "";
+      el.classList.remove("dz-hub", "dz-site-menu", "open");
+    });
+    if (window.DZSiteMenu && window.DZSiteMenu.boot) window.DZSiteMenu.boot();
     if (window.DZ && typeof DZ.syncLabels === "function") DZ.syncLabels();
     const resume = document.getElementById("resumeStrip");
     const resumeRead = document.getElementById("resumeRead");

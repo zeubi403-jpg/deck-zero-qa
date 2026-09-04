@@ -130,12 +130,13 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
     <a href="index.html" data-lang="fr">← Deck Zero</a>
   </div>
   <div style="display:flex;gap:.25rem;align-items:center">
-    <span data-lang="en" style="color:var(--faint)">Archives · Deep</span>
-    <span data-lang="fr" style="color:var(--faint)">Archives · Profond</span>
+    <span data-lang="en" style="color:var(--faint)">Archives · Novel</span>
+    <span data-lang="fr" style="color:var(--faint)">Archives · Roman</span>
     <button type="button" id="langEn" class="on">EN</button>
     <button type="button" id="langFr">FR</button>
     <button type="button" data-audio-mute>AUD</button>
     <button type="button" data-optics-lo>LO</button>
+    <div data-dz-site-menu></div>
   </div>
 </header>
 
@@ -196,6 +197,7 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
 
 <div class="crush-ring" id="crushRing" aria-hidden="true"></div>
 <script src="dz-terminal.js"></script>
+<script src="dz-site-menu.js"></script>
 <script>
 (function () {
   const DZ = window.DZ;
