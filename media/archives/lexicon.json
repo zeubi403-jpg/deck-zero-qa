@@ -1,0 +1,43 @@
+{
+  "title_en": "Archives Lexicon — for theorists who want the map",
+  "title_fr": "Lexique Archives — pour ceux qui veulent la carte",
+  "intro_en": "Optional. The novella stands alone without this page. These entries name the physics already in the prose — for readers who came for Blindsight-grade thesis, Fermi quiet, Filter talk, saccades, and aperiodic structure. We do not preach Dark Forest as gospel; we show a quieter, colder engine.",
+  "intro_fr": "Optionnel. La novella se tient sans cette page. Ces entrées nomment la physique déjà dans la prose — pour les lecteurs venus pour la thèse dure, le ciel de Fermi, le Filtre, les saccades, les pavages apériodiques.",
+  "entries": [
+    {
+      "id": "saccadic",
+      "title": "Saccadic masking / Displaced Gaze",
+      "body": "On Earth, the brain edits out the blur between eye-jumps so consciousness feels continuous. In the Mark-IV, the jump between Slot and camera nodule is not edited — you feel the cut. Displaced Gaze is the Stray technique of parking the 'I' in a CRT nodule. Thesis kin to Watts-grade perception horror: awareness is a kludge, not a throne."
+    },
+    {
+      "id": "aperiodic",
+      "title": "Aperiodic tiling / copper braid / cyst etch",
+      "body": "The Malachite braids and cyst ridges fill space with local matching rules that never settle into a repeating wallpaper motif — cousin to Penrose-like aperiodicity. Non-ego work prefers coverage over signature. Signature is periodic; maintenance is not."
+    },
+    {
+      "id": "nonconscious",
+      "title": "Non-conscious threat (Archaeons / Cyst-Born)",
+      "body": "Not monsters with motives. Thermodynamic maintenance: high cognitive / EM noise as carcinogen; silence as restoration. They do not hate you. You are a thermal smudge on the glass. Hard-SF cousin to Blindsight’s non-conscious supremacy — our flavor is industrial Faraday horror, not vampire linguistics."
+    },
+    {
+      "id": "fermi",
+      "title": "Fermi quiet / Great Filter / Dark Forest (framed)",
+      "body": "Earth theorists named the empty sky many ways: Filter (something culls loud biospheres), Dark Forest (everyone hides and shoots). Vurtek doctrine flatters those stories into strategy. The novel’s physics is colder: local Signal Audit / Filtration as equation-balancing — incomplete, covered, reconstitutable. Not a finished cosmic end-state. Deck Zero’s Corpse-Sky creed is the later incomplete cousin: silence is a morgue, not mercy."
+    },
+    {
+      "id": "emission",
+      "title": "Cognitive emission as lure",
+      "body": "Thought, radio, panic, poetry — structured entropy. Faraday weave and neuro-slurry are survival tools. Later Maglite boarding treats light itself as signature. Same corporation. Different suit doctrine."
+    },
+    {
+      "id": "form99",
+      "title": "Form 99-C / amortized flesh",
+      "body": "Legal reclassification of injured humans into depreciable industrial assets. The emotional engine of the novella: love vs ledger. Accessible to any reader who has ever owed something that grew teeth."
+    },
+    {
+      "id": "deckzero",
+      "title": "Deck Zero (later surface)",
+      "body": "Play product: Maglite temple Presence, Chrono freeze, Cairn-9. Not a sequel chapter of Nailer’s plot. Same predator corp, same emission dread, different war. Novel → optional Deep. Game never requires the book."
+    }
+  ]
+}

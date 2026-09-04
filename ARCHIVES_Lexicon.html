@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Archives Lexicon · Hard SF map</title>
+<meta name="description" content="Optional theorist map: saccadic masking, aperiodic structure, Fermi quiet, non-conscious threat — for Silent Running readers who want the thesis named.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#020805">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--void:#020805;--ink:#c5ddd0;--title:#eefaf3;--muted:#8aab9a;--phos:#4dff9a;--line:rgba(77,255,154,.18);--frame:clamp(14px,2.4vw,22px);--serif:"Instrument Serif",Georgia,serif;--mono:"IBM Plex Mono",monospace}
+html[lang="en"] [data-lang="fr"]{display:none!important}
+html[lang="fr"] [data-lang="en"]{display:none!important}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100%;color:var(--ink);font-family:var(--serif);background:linear-gradient(180deg,#030906,#07140f);padding:var(--frame)}
+a{color:var(--phos)}
+.chrome{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line);padding:.75rem 0;margin-bottom:1.5rem}
+.chrome a,.chrome button{color:var(--muted);background:0;border:0;font:inherit;cursor:pointer;text-decoration:none;padding:.35rem .5rem}
+.chrome .on{color:var(--void);background:var(--phos)}
+h1{font-family:var(--mono);font-size:clamp(1.2rem,3vw,1.7rem);color:var(--title);text-transform:uppercase;margin-bottom:.75rem}
+.lead{font-size:1.1rem;line-height:1.6;color:#d0e8da;max-width:40rem;margin-bottom:1.5rem}
+.card{border:1px solid var(--line);background:rgba(4,14,10,.75);padding:1rem 1.1rem;margin:0 0 .85rem;max-width:42rem}
+.card h2{font-family:var(--mono);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--phos);margin-bottom:.55rem}
+.card p{font-size:1.02rem;line-height:1.65;color:var(--ink)}
+.foot{margin-top:2rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="chrome">
+  <a href="ARCHIVES_Silent_Running.html"><span data-lang="en">← Novel</span><span data-lang="fr">← Roman</span></a>
+  <div>
+    <button type="button" id="langEn" class="on">EN</button>
+    <button type="button" id="langFr">FR</button>
+    <a href="index.html">Deck Zero</a>
+  </div>
+</header>
+<h1 id="title"></h1>
+<p class="lead" id="intro"></p>
+<div id="cards"></div>
+<p class="foot"><a href="ARCHIVES_Silent_Running.html">Begin / resume Silent Running</a> · <a href="DECK_ZERO_Pitch.html">Boarding dossier</a></p>
+<script>
+(function(){
+  function setLang(l){
+    document.documentElement.lang=l;
+    try{localStorage.setItem("dz_lang",l)}catch(_){}
+    document.getElementById("langEn").classList.toggle("on",l==="en");
+    document.getElementById("langFr").classList.toggle("on",l==="fr");
+  }
+  document.getElementById("langEn").onclick=()=>setLang("en");
+  document.getElementById("langFr").onclick=()=>setLang("fr");
+  try{setLang(new URLSearchParams(location.search).get("lang")==="fr"||localStorage.getItem("dz_lang")==="fr"?"fr":"en")}catch(_){setLang("en")}
+  fetch("media/archives/lexicon.json").then(r=>r.json()).then(j=>{
+    const fr=document.documentElement.lang==="fr";
+    document.getElementById("title").textContent=fr?j.title_fr:j.title_en;
+    document.getElementById("intro").textContent=fr?j.intro_fr:j.intro_en;
+    const root=document.getElementById("cards");
+    j.entries.forEach(e=>{
+      const d=document.createElement("div");
+      d.className="card";
+      d.innerHTML="<h2>"+e.title+"</h2><p>"+e.body+"</p>";
+      root.appendChild(d);
+    });
+  });
+})();
+</script>
+</body>
+</html>
