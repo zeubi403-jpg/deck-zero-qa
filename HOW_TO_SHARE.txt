@@ -1,0 +1,20 @@
+﻿DECK ZERO — share pack (Ashen-Null optical terminal)
+
+Voice: 2118 cleared dossier. Senior / forensic. No store slogans
+in body or social previews. Maglite + Chrono = gear names, not UI speak.
+
+Steam store punch line (store only): see docs/STEAM_PRESENTATION_BRIEF.md
+
+Files:
+  index.html                 — terminal home
+  DECK_ZERO_Pitch.html       — cleared log (10 panels: knives first, century = appendix #9)
+  DECK_ZERO_Chronology.html  — routes to appendix #9
+  START_HERE.html            — redirect → index
+  dz-terminal.js             — audio / optics / OG helpers
+
+Controls: arrows, drag/swipe (desktop+mobile), Prev/Next, Eject, Index/Sommaire, develop entry.
+
+LIVE: https://zeubi403-jpg.github.io/deck-zero/
+Redeploy: powershell -File E:\ghost-ship-protocol-v2\tools\_share_deploy\deploy_github_pages.ps1
+
+Share polish ≠ Soft→Bridge signed / Slice One READY.

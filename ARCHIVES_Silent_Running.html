@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Vurtek Archives · The Silent Running</title>
+<meta name="description" content="The Silent Running — a publishable hard sci-fi novella of sealed iron, debt, and non-conscious silence. Literary prequel surface to Deck Zero.">
+<meta name="theme-color" content="#020805">
+<meta name="robots" content="index,follow">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="og.png">
+<meta property="og:title" content="The Silent Running · Vurtek Archives">
+<meta property="og:description" content="Before Maglite boarding, there was sealed iron — debt, a three-millimeter slot, and a love Vurtek amortized like ore.">
+<meta property="og:type" content="book">
+<meta property="og:image" content="media/archives/vurtek_cover_art_1788547947808.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Silent Running · Vurtek Archives">
+<meta name="twitter:description" content="Standalone hard sci-fi novella. Faces first. Physics as horror.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#020805;--fog:#07140f;
+  --ink:#c5ddd0;--title:#eefaf3;--muted:#8aab9a;--faint:#5a7d6c;
+  --phos:#4dff9a;--phos-dim:#2a8f58;--phos-glow:rgba(77,255,154,.12);
+  --line:rgba(77,255,154,.18);
+  --frame:clamp(14px,2.4vw,22px);
+  --chrome-h:52px;--dock-h:64px;
+  --display:"Syne",sans-serif;--serif:"Instrument Serif",Georgia,serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+html[lang="en"] [data-lang="fr"]{display:none!important}
+html[lang="fr"] [data-lang="en"]{display:none!important}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{
+  color:var(--ink);font-family:var(--serif);
+  background:
+    radial-gradient(ellipse 60% 45% at 50% -5%, rgba(77,255,154,.1), transparent 55%),
+    linear-gradient(180deg,#030906,var(--fog));
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;opacity:.055;z-index:50;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.5) 2px,rgba(0,0,0,.5) 3px);
+  animation:scan-roll 11s linear infinite;
+}
+@keyframes scan-roll{from{background-position:0 0}to{background-position:0 3px}}
+.chrome{
+  position:fixed;top:env(safe-area-inset-top);left:var(--frame);right:var(--frame);
+  height:var(--chrome-h);z-index:40;display:flex;align-items:center;justify-content:space-between;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+  border-bottom:1px solid var(--line);background:rgba(2,8,5,.82);backdrop-filter:blur(8px);
+  padding:0 .75rem;
+}
+.chrome a,.chrome button{color:var(--muted);background:none;border:0;font:inherit;cursor:pointer;text-decoration:none;padding:.35rem .5rem}
+.chrome a:hover,.chrome button:hover{color:var(--phos)}
+.chrome .on{color:var(--void);background:var(--phos)}
+.stage{
+  position:fixed;
+  top:calc(env(safe-area-inset-top) + var(--chrome-h));
+  left:var(--frame);right:var(--frame);
+  bottom:calc(env(safe-area-inset-bottom) + var(--dock-h));
+  overflow:auto;-webkit-overflow-scrolling:touch;padding:clamp(1rem,3vw,2rem);
+}
+.cover-hero{
+  display:grid;gap:1.25rem;max-width:920px;margin:0 auto;
+  grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);
+}
+@media(max-width:820px){.cover-hero{grid-template-columns:1fr}}
+.cover-hero img{
+  width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line);
+  box-shadow:0 0 40px rgba(77,255,154,.08);
+}
+.kicker{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--phos-dim);margin-bottom:.7rem}
+h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);letter-spacing:.02em;line-height:1.15;color:var(--title);text-transform:uppercase;margin-bottom:.75rem}
+.lead{font-size:clamp(1.12rem,2.2vw,1.32rem);line-height:1.55;color:#d0e8da;max-width:36rem;margin-bottom:1rem}
+.pitch{font-size:1.05rem;line-height:1.7;color:var(--muted);max-width:36rem;margin-bottom:1rem}
+.bridge{margin:1.1rem 0;padding:.85rem 1rem;border-left:2px solid var(--phos);font-size:.95rem;line-height:1.55;color:#c5ddd0;max-width:36rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
+.cta-row a,.cta-row button{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.7rem 1rem;border:1px solid var(--phos);color:var(--void);background:var(--phos);
+  text-decoration:none;cursor:pointer;
+}
+.cta-row a.ghost,.cta-row button.ghost{background:transparent;color:var(--phos)}
+.toc{max-width:820px;margin:0 auto;display:grid;gap:.75rem}
+.toc-card{
+  display:grid;grid-template-columns:96px 1fr;gap:.9rem;align-items:center;
+  border:1px solid var(--line);background:rgba(4,14,10,.75);padding:.7rem;cursor:pointer;text-align:left;width:100%;color:inherit;font:inherit;
+}
+.toc-card:hover{border-color:var(--phos);background:rgba(77,255,154,.06)}
+.toc-card img{width:96px;height:72px;object-fit:cover;border:1px solid var(--line)}
+.toc-card .num{font-family:var(--mono);font-size:.58rem;letter-spacing:.1em;color:var(--phos);text-transform:uppercase}
+.toc-card h3{font-family:var(--mono);font-size:.95rem;letter-spacing:.04em;color:var(--title);text-transform:uppercase;margin:.2rem 0}
+.toc-card .sub{font-size:.88rem;color:var(--muted);line-height:1.4}
+.reader{max-width:38rem;margin:0 auto}
+.reader .still{width:100%;max-height:220px;object-fit:cover;border:1px solid var(--line);margin-bottom:1.1rem}
+.reader .tele{font-family:var(--mono);font-size:.55rem;letter-spacing:.06em;color:var(--faint);margin-bottom:.8rem;word-break:break-word}
+.reader h2{font-family:var(--mono);font-size:clamp(1.2rem,2.8vw,1.55rem);color:var(--title);text-transform:uppercase;margin-bottom:.35rem}
+.reader .sub{font-style:italic;color:var(--muted);margin-bottom:1.2rem}
+.reader p{font-size:clamp(1.08rem,1.9vw,1.18rem);line-height:1.78;margin:0 0 1.05rem;color:#c8ddd0}
+.reader p:first-of-type::first-letter{
+  float:left;font-size:3.1rem;line-height:.85;padding:.1rem .45rem 0 0;color:var(--phos);font-family:var(--serif);
+}
+.dock{
+  position:fixed;left:var(--frame);right:var(--frame);bottom:env(safe-area-inset-bottom);
+  height:var(--dock-h);z-index:40;display:flex;align-items:center;gap:.5rem;
+  border-top:1px solid var(--line);background:rgba(2,8,5,.9);padding:0 .5rem;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.dock a,.dock button{color:var(--muted);background:none;border:1px solid transparent;padding:.45rem .65rem;cursor:pointer;font:inherit;text-decoration:none}
+.dock button.primary{border-color:var(--line);color:var(--phos)}
+.dock .mid{flex:1;text-align:center;color:var(--faint)}
+.view{display:none}.view.on{display:block}
+.crush-ring{
+  position:fixed;z-index:60;pointer-events:none;border:1px solid rgba(255,255,255,.55);
+  border-radius:50%;width:48px;height:48px;margin:-24px 0 0 -24px;opacity:0;
+  box-shadow:0 0 18px rgba(77,255,154,.35), inset 0 0 12px rgba(255,255,255,.2);
+  mix-blend-mode:screen;
+}
+.crush-ring.on{opacity:1}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
+</style>
+</head>
+<body>
+<header class="chrome">
+  <div>
+    <a href="index.html" data-lang="en">← Deck Zero</a>
+    <a href="index.html" data-lang="fr">← Deck Zero</a>
+  </div>
+  <div style="display:flex;gap:.25rem;align-items:center">
+    <span data-lang="en" style="color:var(--faint)">Archives · Deep</span>
+    <span data-lang="fr" style="color:var(--faint)">Archives · Profond</span>
+    <button type="button" id="langEn" class="on">EN</button>
+    <button type="button" id="langFr">FR</button>
+    <button type="button" data-audio-mute>AUD</button>
+    <button type="button" data-optics-lo>LO</button>
+  </div>
+</header>
+
+<main class="stage">
+  <section class="view on" id="viewCover">
+    <div class="cover-hero">
+      <img id="coverImg" alt="Silent Running cover" src="media/archives/vurtek_cover_art_1788547947808.jpg">
+      <div>
+        <div class="kicker" data-lang="en">Vurtek Archives · optional prequel literature</div>
+        <div class="kicker" data-lang="fr">Archives Vurtek · littérature préquelle optionnelle</div>
+        <h1 id="msTitle">The Silent Running</h1>
+        <p class="lead" id="msLogline"></p>
+        <p class="pitch" id="msPitch"></p>
+        <p class="bridge" id="msBridge"></p>
+        <div class="cta-row">
+          <button type="button" id="btnBegin" data-lang="en">Begin the case</button>
+          <button type="button" id="btnBeginFr" data-lang="fr">Ouvrir le dossier</button>
+          <button type="button" class="ghost" id="btnResume" style="display:none" data-lang="en">Resume reading</button>
+          <button type="button" class="ghost" id="btnResumeFr" style="display:none" data-lang="fr">Reprendre</button>
+          <a class="ghost" href="DECK_ZERO_Pitch.html" data-lang="en">Boarding dossier</a>
+          <a class="ghost" href="DECK_ZERO_Pitch.html" data-lang="fr">Dossier d’abordage</a>
+        </div>
+        <p class="pitch" id="readMeta" style="margin-top:1rem;font-size:.85rem;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)"></p>
+        <p class="pitch" style="margin-top:1.25rem;font-size:.92rem;opacity:.85" data-lang="en">Prose in English (master text). Glass controls EN/FR for framing. You do not need this book to board Cairn-9.</p>
+        <p class="pitch" style="margin-top:1.25rem;font-size:.92rem;opacity:.85" data-lang="fr">Prose en anglais (texte maître). Le verre EN/FR cadre seulement. Ce livre n’est pas requis pour aborder Cairn-9.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="viewToc">
+    <div class="kicker" data-lang="en">Table of contents · sealed-iron case</div>
+    <div class="kicker" data-lang="fr">Sommaire · dossier fer scellé</div>
+    <h1 data-lang="en">Chapters</h1>
+    <h1 data-lang="fr">Chapitres</h1>
+    <p class="pitch" data-lang="en">Read in order. Each entry opens on the optical glass — hold to crush, AUD for hum, LO to dim the tube.</p>
+    <p class="pitch" data-lang="fr">Lisez dans l’ordre. Chaque entrée s’ouvre sur le verre optique — maintenir pour écraser, AUD pour le ronron, LO pour atténuer le tube.</p>
+    <div class="toc" id="toc"></div>
+  </section>
+
+  <section class="view" id="viewReader">
+    <article class="reader" id="reader"></article>
+  </section>
+</main>
+
+<nav class="dock" aria-label="Archives pager">
+  <a href="index.html"><span data-lang="en">Eject</span><span data-lang="fr">Éjecter</span></a>
+  <button type="button" id="prevBtn">◀</button>
+  <div class="mid" id="dockMeta">COVER</div>
+  <button type="button" class="primary" id="nextBtn">▶</button>
+  <a href="DECK_ZERO_Pitch.html"><span data-lang="en">Dossier</span><span data-lang="fr">Dossier</span></a>
+</nav>
+
+<div class="crush-ring" id="crushRing" aria-hidden="true"></div>
+<script src="dz-terminal.js"></script>
+<script>
+(function () {
+  const DZ = window.DZ;
+
+  let data = null;
+  let mode = "cover"; // cover | toc | reader
+  let chapterIndex = 0;
+
+  const viewCover = document.getElementById("viewCover");
+  const viewToc = document.getElementById("viewToc");
+  const viewReader = document.getElementById("viewReader");
+  const tocEl = document.getElementById("toc");
+  const readerEl = document.getElementById("reader");
+  const dockMeta = document.getElementById("dockMeta");
+
+  function lang() {
+    return document.documentElement.lang === "fr" ? "fr" : "en";
+  }
+  function setLang(l) {
+    document.documentElement.lang = l;
+    try { localStorage.setItem("dz_lang", l); } catch (_) {}
+    document.getElementById("langEn").classList.toggle("on", l === "en");
+    document.getElementById("langFr").classList.toggle("on", l === "fr");
+    applyMeta();
+    if (DZ && DZ.syncLabels) DZ.syncLabels();
+  }
+  document.getElementById("langEn").onclick = () => setLang("en");
+  document.getElementById("langFr").onclick = () => setLang("fr");
+  try {
+    const q = new URLSearchParams(location.search).get("lang");
+    setLang(q === "fr" || localStorage.getItem("dz_lang") === "fr" ? "fr" : "en");
+  } catch (_) { setLang("en"); }
+
+  function applyMeta() {
+    if (!data) return;
+    const L = lang();
+    document.getElementById("msTitle").textContent = data.meta.title.replace(/^VURTEK ARCHIVES:\s*/i, "");
+    document.getElementById("msLogline").textContent = L === "fr" ? data.logline_fr : data.logline_en;
+    document.getElementById("msPitch").textContent = L === "fr" ? data.pitch_fr : data.pitch_en;
+    document.getElementById("msBridge").textContent = data.bridge[L] || data.bridge.en;
+    document.getElementById("coverImg").src = "media/archives/" + data.cover;
+  }
+
+  function show(m) {
+    mode = m;
+    viewCover.classList.toggle("on", m === "cover");
+    viewToc.classList.toggle("on", m === "toc");
+    viewReader.classList.toggle("on", m === "reader");
+    if (DZ && DZ.beepSoft) DZ.beepSoft();
+    syncDock();
+    window.scrollTo(0, 0);
+    document.querySelector(".stage").scrollTop = 0;
+  }
+
+  function formatInline(s) {
+    var t = escapeHtml(s);
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    t = t.replace(/`([^`]+)`/g, "<code style=\"font-family:var(--mono);font-size:.9em;color:var(--phos)\">$1</code>");
+    // bare URLs
+    t = t.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" style="color:var(--phos)" target="_blank" rel="noopener">$1</a>');
+    return t;
+  }
+
+  function saveProgress(i) {
+    try { localStorage.setItem("sr_chapter", String(i)); } catch (_) {}
+  }
+
+  function syncDock() {
+    if (!data) { dockMeta.textContent = "…"; return; }
+    if (mode === "cover") dockMeta.textContent = lang() === "fr" ? "COUVERTURE" : "COVER";
+    else if (mode === "toc") dockMeta.textContent = "TOC · " + data.chapters.length;
+    else {
+      const ch = data.chapters[chapterIndex];
+      const pct = Math.round(((chapterIndex + 1) / data.chapters.length) * 100);
+      dockMeta.textContent = (ch.number || "") + " · " + (chapterIndex + 1) + "/" + data.chapters.length + " · " + pct + "%";
+    }
+  }
+
+  function buildToc() {
+    tocEl.innerHTML = "";
+    data.chapters.forEach((ch, i) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "toc-card";
+      const eta = ch.estimatedReadTime || "";
+      b.innerHTML =
+        '<img alt="" src="media/archives/' + ch.still + '">' +
+        '<div><div class="num">' + escapeHtml(ch.number) + (eta ? " · " + escapeHtml(eta) : "") + '</div><h3>' + escapeHtml(ch.title) + '</h3><div class="sub">' + escapeHtml(ch.subtitle) + "</div></div>";
+      b.onclick = () => openChapter(i);
+      tocEl.appendChild(b);
+    });
+  }
+
+  function openChapter(i) {
+    chapterIndex = i;
+    saveProgress(i);
+    const ch = data.chapters[i];
+    const paras = ch.paragraphs.map((p) => {
+      const plain = p.replace(/^\*\*/, "").replace(/\*\*$/, "");
+      const isTitleLine = p === "STRAY-744" || p === "HE SHUT THE DOOR." || p === "CLACK.";
+      if (isTitleLine) return '<p style="font-family:var(--mono);letter-spacing:.08em;color:var(--phos);text-align:center;margin:1.4rem 0">' + escapeHtml(p) + "</p>";
+      return "<p>" + formatInline(p) + "</p>";
+    }).join("");
+    const eta = ch.estimatedReadTime ? '<div class="tele">' + escapeHtml(ch.estimatedReadTime) + (ch.wordCount ? " · ~" + ch.wordCount + " words" : "") + "</div>" : "";
+    readerEl.innerHTML =
+      '<img class="still" alt="" src="media/archives/' + ch.still + '">' +
+      '<div class="tele">' + escapeHtml(ch.telemetryHeader) + "</div>" +
+      eta +
+      "<h2>" + escapeHtml(ch.number + " · " + ch.title) + "</h2>" +
+      '<div class="sub">' + escapeHtml(ch.subtitle) + "</div>" +
+      paras;
+    show("reader");
+    if (DZ && DZ.beepLog) DZ.beepLog();
+  }
+
+  function escapeHtml(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  document.getElementById("btnBegin").onclick = () => show("toc");
+  document.getElementById("btnBeginFr").onclick = () => show("toc");
+
+  document.getElementById("prevBtn").onclick = () => {
+    if (mode === "reader") {
+      if (chapterIndex > 0) openChapter(chapterIndex - 1);
+      else show("toc");
+    } else if (mode === "toc") show("cover");
+  };
+  document.getElementById("nextBtn").onclick = () => {
+    if (mode === "cover") show("toc");
+    else if (mode === "toc") openChapter(0);
+    else if (chapterIndex < data.chapters.length - 1) openChapter(chapterIndex + 1);
+    else location.href = "DECK_ZERO_Pitch.html?lang=" + lang();
+  };
+
+  window.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") document.getElementById("nextBtn").click();
+    if (e.key === "ArrowLeft") document.getElementById("prevBtn").click();
+  });
+
+  // Optical glass crush (Ashen-Null language — keep interactions)
+  (function crush() {
+    const ring = document.getElementById("crushRing");
+    let pressing = false;
+    function at(x, y, on) {
+      ring.style.left = x + "px";
+      ring.style.top = y + "px";
+      ring.classList.toggle("on", !!on);
+    }
+    window.addEventListener("pointerdown", (e) => {
+      if (e.pointerType === "touch") return;
+      pressing = true;
+      at(e.clientX, e.clientY, true);
+    }, { passive: true });
+    window.addEventListener("pointermove", (e) => {
+      if (!pressing) return;
+      at(e.clientX, e.clientY, true);
+    }, { passive: true });
+    window.addEventListener("pointerup", () => {
+      pressing = false;
+      ring.classList.remove("on");
+    }, { passive: true });
+  })();
+
+  fetch("media/archives/silent_running.json")
+    .then((r) => r.json())
+    .then((j) => {
+      data = j;
+      applyMeta();
+      buildToc();
+      const words = data.chapters.reduce((n, c) => n + (c.wordCount || c.paragraphs.join(" ").split(/\s+/).length), 0);
+      const mins = Math.max(1, Math.round(words / 220));
+      document.getElementById("readMeta").textContent =
+        (lang() === "fr" ? "Édition · ~" : "Edition · ~") + words.toLocaleString() + " words · ~" + mins + " min";
+      let saved = -1;
+      try { saved = parseInt(localStorage.getItem("sr_chapter") || "-1", 10); } catch (_) {}
+      if (saved >= 0 && saved < data.chapters.length) {
+        document.getElementById("btnResume").style.display = "";
+        document.getElementById("btnResumeFr").style.display = "";
+        document.getElementById("btnResume").onclick = () => openChapter(saved);
+        document.getElementById("btnResumeFr").onclick = () => openChapter(saved);
+      }
+      const hash = location.hash.replace("#", "");
+      if (hash) {
+        const idx = data.chapters.findIndex((c) => c.id === hash || c.number === hash);
+        if (idx >= 0) openChapter(idx);
+        else if (hash === "toc") show("toc");
+      }
+    })
+    .catch((err) => {
+      document.getElementById("msPitch").textContent = "Archives load failed: " + err;
+    });
+})();
+</script>
+</body>
+</html>
