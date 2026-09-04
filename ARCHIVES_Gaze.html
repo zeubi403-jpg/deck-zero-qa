@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Displaced Gaze · Calibration</title>
+<meta name="description" content="Feel the cut between Slot and camera — Displaced Gaze micro-experience for Silent Running.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#020805">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--void:#020805;--phos:#4dff9a;--danger:#ff5555;--warn:#ffcc00;--ink:#c5ddd0;--mono:"IBM Plex Mono",monospace;--serif:"Instrument Serif",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--void);color:var(--ink);font-family:var(--mono);overflow:hidden}
+.hud{position:fixed;inset:0;display:flex;flex-direction:column}
+.top{display:flex;justify-content:space-between;align-items:center;padding:.6rem .9rem;border-bottom:1px solid rgba(77,255,154,.2);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;z-index:5;background:rgba(2,8,5,.9)}
+.top a{color:var(--phos);text-decoration:none}
+.stage{flex:1;position:relative;background:#000}
+.view{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .05s linear;filter:contrast(1.05) saturate(.85)}
+.view.on{opacity:1}
+.view.slot{
+  background-image:url("media/archives/reel_sarcophagus_bolt_1788552247189.jpg");
+  clip-path: inset(38% 46% 38% 46%);
+  filter:contrast(1.2) brightness(.7) saturate(.5);
+}
+.view.cam{
+  background-image:url("media/archives/malachite_derelict_1788547966862.jpg");
+  filter:contrast(1.1) hue-rotate(40deg) saturate(.6) brightness(.85);
+}
+.view.cam::after{
+  content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.35) 2px,rgba(0,0,0,.35) 3px);
+  pointer-events:none;
+}
+.cut{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:3}
+.cut.flash{animation:cut .12s steps(2) forwards}
+@keyframes cut{0%{opacity:1}100%{opacity:0}}
+.vignette{position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:radial-gradient(ellipse 70% 60% at 50% 50%,transparent 40%,rgba(0,0,0,.85) 100%)}
+.bottom{padding:.85rem 1rem 1.1rem;border-top:1px solid rgba(77,255,154,.2);background:rgba(2,8,5,.95);z-index:5}
+.meter-label{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;color:#8aab9a}
+.meter{height:10px;border:1px solid rgba(77,255,154,.35);background:#0a140f;position:relative}
+.meter > i{display:block;height:100%;width:18%;background:var(--phos);transition:width .2s,background .2s}
+.row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
+button{
+  font:inherit;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.65rem .85rem;border:1px solid var(--phos);background:transparent;color:var(--phos);cursor:pointer;
+}
+button.primary{background:var(--phos);color:var(--void)}
+button:disabled{opacity:.35;cursor:not-allowed}
+.note{margin-top:.7rem;font-family:var(--serif);font-size:.95rem;line-height:1.45;color:#9bb8a8;max-width:40rem}
+.warn{color:var(--warn)}.crit{color:var(--danger)}
+</style>
+</head>
+<body>
+<div class="hud">
+  <div class="top">
+    <a href="ARCHIVES_Silent_Running.html">← Novel</a>
+    <span id="modeLbl">SLOT · 3mm</span>
+    <a href="index.html">Deck Zero</a>
+  </div>
+  <div class="stage" id="stage">
+    <div class="view slot on" id="vSlot"></div>
+    <div class="view cam" id="vCam"></div>
+    <div class="cut" id="cut"></div>
+    <div class="vignette"></div>
+  </div>
+  <div class="bottom">
+    <div class="meter-label">Cognitive emissions · <span id="emVal">18%</span></div>
+    <div class="meter"><i id="emBar"></i></div>
+    <div class="row">
+      <button type="button" class="primary" id="btnToggle">Displace gaze</button>
+      <button type="button" id="btnSlurry">Inject slurry</button>
+      <button type="button" id="btnRead">Read Ch.01 — Third Millimeter</button>
+    </div>
+    <p class="note" id="note">Hold still. The Slot is three millimeters of real world. Switch, and you will feel the cut the brain usually edits out.</p>
+  </div>
+</div>
+<script>
+(function(){
+  let mode = "slot"; // slot | cam
+  let em = 18;
+  const bar = document.getElementById("emBar");
+  const emVal = document.getElementById("emVal");
+  const note = document.getElementById("note");
+  const modeLbl = document.getElementById("modeLbl");
+  const cut = document.getElementById("cut");
+  const vSlot = document.getElementById("vSlot");
+  const vCam = document.getElementById("vCam");
+
+  function paint(){
+    bar.style.width = em + "%";
+    emVal.textContent = em + "%";
+    bar.style.background = em > 75 ? "var(--danger)" : em > 45 ? "var(--warn)" : "var(--phos)";
+    emVal.className = em > 75 ? "crit" : em > 45 ? "warn" : "";
+    if (em > 75) note.textContent = "CRITICAL flux. You are painting the dark with thought. Slurry — or the deck will answer.";
+    else if (em > 45) note.textContent = "Amber. Memory is starting to invent faces in the scanlines.";
+    else if (mode === "cam") note.textContent = "Camera nodule. Fish-eye CRT. Your meat is elsewhere — do not forget the wire.";
+    else note.textContent = "Slot. Three millimeters. Continuous world is a lie stitched from saccades.";
+  }
+  function flash(){
+    cut.classList.remove("flash");
+    void cut.offsetWidth;
+    cut.classList.add("flash");
+  }
+  function setMode(m){
+    mode = m;
+    flash();
+    vSlot.classList.toggle("on", m === "slot");
+    vCam.classList.toggle("on", m === "cam");
+    modeLbl.textContent = m === "slot" ? "SLOT · 3mm" : "NODULE · DISPLACED";
+    em = Math.min(98, em + (m === "cam" ? 14 : 8));
+    paint();
+  }
+  document.getElementById("btnToggle").onclick = () => setMode(mode === "slot" ? "cam" : "slot");
+  document.getElementById("btnSlurry").onclick = () => { em = Math.max(8, em - 28); paint(); };
+  document.getElementById("btnRead").onclick = () => { location.href = "ARCHIVES_Silent_Running.html#prologue"; };
+  setInterval(() => { em = Math.min(96, em + (mode === "cam" ? 1.2 : 0.6)); paint(); }, 900);
+  paint();
+})();
+</script>
+</body>
+</html>
