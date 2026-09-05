@@ -13,7 +13,7 @@ Debt bought the suit. The suit bought four years. Love was sold like ore.
 
 Paul Reyes signs Form 99-C so Sarah will not die in the slag pits. Four years later he is Stray-744 — a mind sealed in three tons of cast iron, cutting silent ships in Jupiter’s radiation skirt. What waits does not hate. It solves for silence.
 
-Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, an honest flashlight, a second you can hold still. Open Cairn-9 when you want the warm hull.
+Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, an honest flashlight, a second you can hold still. Cairn-9 opens under an Ashen-Null contract on a Vurtek salvage charter — Keel-Nadir may contest the claim; Slag-Cord may already be stripping the warm hull. Open the dossier when you want that war.
 
 ---
 

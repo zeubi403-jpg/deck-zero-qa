@@ -1,9 +1,24 @@
 {
   "title_en": "Archives Lexicon — for readers who want the map",
   "title_fr": "Lexique Archives — pour ceux qui veulent la carte",
-  "intro_en": "The novella stands alone without this page. These entries name the physics already in the prose — Fermi quiet, Filter talk, saccades, aperiodic structure. We do not preach Dark Forest as gospel; we show a quieter, colder engine.",
-  "intro_fr": "La novella se tient sans cette page. Ces entrées nomment la physique déjà dans la prose — ciel de Fermi, Filtre, saccades, pavages apériodiques.",
+  "intro_en": "The novella stands alone without this page. These entries name the physics and the multipolar residue already under the prose — Fermi quiet, Filter talk, Emit and Die, who else owns the dark. We do not preach Dark Forest as gospel; we show a quieter, colder engine.",
+  "intro_fr": "La novella se tient sans cette page. Ces entrées nomment la physique et le résidu multipolaire sous la prose — ciel de Fermi, Filtre, Émettre c’est mourir, qui d’autre possède le noir.",
   "entries": [
+    {
+      "id": "emitdie",
+      "title": "World-model quiet / Emit and Die",
+      "body": "Fossil of today’s AI race, stripped of brand names. Defense pivoted to predictive world-model machines on silent local hardware. Chatty narrating agents painted kill boxes for drones and heat. What survived forecast without telling. In 2035 active wireless became operational treason — Emit and Die. Habit before Doctrine. The boarding horror is not an uprising of those machines; it is what learned to feed after Earth went quiet."
+    },
+    {
+      "id": "predictors",
+      "title": "Silent predictors vs narrating machines",
+      "body": "Faraday culture hates agents that speak for you. A voice is a signature; a signature is a target. Silent predictors keep the field. Later contractors learn the same grammar under Maglite: honesty paints you. Chat is not comfort. Chat is emission."
+    },
+    {
+      "id": "multipolar",
+      "title": "Multipolar residue",
+      "body": "Not a mono-corporate sky. Vurtek Heavy Industries builds iron and amortizes lives. Ashen-Null Private Security boards under Faraday contracts and owns the Tick. Keel-Nadir Logistics moves freight and may contest salvage claims — never the alien leash. Slag-Cord Salvage strips warm hulls first and fights like humans. Cairn-9: ANPS under a Vurtek salvage charter; peers may already be arguing, or already aboard."
+    },
     {
       "id": "saccadic",
       "title": "Saccadic masking / Displaced Gaze",
