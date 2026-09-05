@@ -1,27 +1,32 @@
 # Writing / narrator / engagement audit — Silent Running + share_v2
 
-**Date:** 2026-09-05  
-**Standard:** Tor/Orbit hard-SF novella + diegetic wake Brief (not Steam punch-card in body)
+**Date:** 2026-09-05 (editor pass 2)  
+**Standard:** Publishable hard-SF novella + diegetic wake Brief for **public readers** (not studio lab)
 
 ## Verdict
 
 | Surface | Grade | Call |
 |---------|-------|------|
-| Mid-novella (Prelude→Ch.05) | **A−** | Keep. Sensory, industrial, face-driven. Award-lane craft. |
-| Ch.06 climax | **B+** | Heat strong; last two lines were meta-studio. Softened to literary. |
-| Epilogue | **B** | Memorial beat excellent; “ARCHIVE NOTE” broke diegesis. Moved franchise speak to Afterword only. |
-| Afterword | **C→B** | Was product memo. Rewritten as literary close + one clean Deck Zero CTA. |
-| Deck Zero Pitch knives | **A** | Leave Brief untouched (2A). |
-| Archives UX (pre-pass) | **C+** | Cover OK; missing progress, read-time, markdown glyphs, public robots/OG. |
+| Mid-novella (Prelude→Ch.05) | **A−** | Keep. Sensory, industrial, face-driven. |
+| Ch.06 climax | **B+** | Heat strong; meta softened earlier. |
+| Epilogue | **B** | Memorial beat; franchise speak stays Afterword. |
+| Afterword | **B+** | Suit succession explicit: 3mm *then*, Maglite *now*; cameras never merge. |
+| Deck Zero Pitch knives | **A** | Brief voice kept; Deep footer only for franchise armor bridge. |
+| Public chrome (home / Gaze / menu) | **A−** | Designer-speak scrubbed this pass. |
 
-## Narrator / engagement fixes (this pass)
+## Narrator rules (lock)
 
-1. Diegetic purity: no studio “Filtration incomplete / Maglite Chrono” inside Epilogue body.  
-2. Ending: Nailer’s quiet stays personal; sky incompleteness implied, not lectured.  
-3. Afterword: one page, publishable voice, bridge + wake link.  
-4. Archives reader: progress %, chapter ETA, bold/italic render, resume last chapter, `index,follow`, OG.  
-5. Public deploy: shareable Pages URL (production `deck-zero` still untouched).
+1. First sentences must work for cold readers; Ashen-Null diegesis is atmosphere, not a quiz.  
+2. Market **both** novel and game without chart-promise vanity.  
+3. Never sell 3mm sarcophagus as F5 Maglite Presence.  
+4. *The Third Millimeter* = Ch.01 prose; *Displaced Gaze* = optional feel of that mechanic.  
+5. “Surface / widget / USP / F5 / Soft→Bridge / MEASURE / century appendix” stay off public chrome.
+
+## This pass
+
+- Public HTML + menu + lexicon + afterword/bridge: reader language + armor eras.  
+- Full prose line-edit of every chapter: **parked** (weeks-long Tor edit).
 
 ## Honest limit
 
-A full line-edit of every chapter to “#1 NYT” is a weeks-long Tor edit, not a same-night pass. This ship makes the **edition publishable**: framing, ending stakes, packaging, and reading engagement match the already-brilliant mid-book prose.
+Edition is publishable for franchise coherence. Mid-book craft already carries; remaining debt is optional deep line-edit, not framing.

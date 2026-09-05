@@ -1,38 +1,36 @@
 # Site map & UX / theme audit
 
-**URL:** https://zeubi403-jpg.github.io/deck-zero-qa/
+**URL:** https://zeubi403-jpg.github.io/deck-zero-qa/  
+**Supersedes:** earlier hub-only fix. Full product audit: [`PRODUCT_AUDIT.md`](PRODUCT_AUDIT.md).
 
-## Clear path (fixed)
+## Clear path (lock)
 
-1. **Home** — hook + **hub cards** (Dossier / Novel / Gaze / Lexicon)  
-2. **Menu (top-right on every page)** — whole-site list  
-3. **Pitch Index** — knives + Archives Novel / Gaze links  
+1. **Home** — outsider lead + era strip + **two equal gates** (Novel first, then Brief)  
+2. **Menu (top-right)** — whole site · Novel = 1 · Brief = 2  
+3. **Pitch Index** — knives + Archives links  
+4. **Optional** — Gaze · Lexicon · century timeline appendix  
 
 | Want | Go |
 |------|-----|
-| Play Brief | Open dossier |
-| Novel | Read the novel / Menu → 2 |
+| Read novella | Gate 1 / Menu → 1 |
+| Play Brief | Gate 2 / Menu → 2 |
 | Feel Slot cut | Displaced Gaze |
-| Thesis map | Hard-SF lexicon |
+| Thesis map | Hard-SF lexicon (optional) |
+| Long timeline | Optional century timeline / Pitch #9 |
 | Manuscript file | Menu → Download .md |
 
 ## Theme coherence
 
 | Theme | Where |
 |-------|--------|
-| Maglite / Chrono / Cairn | Home + Pitch (viewport 1) |
+| Maglite / Chrono / Cairn | Home era “Then” + Pitch knives |
 | Sealed iron / debt / Gaze | Novel + Gaze |
-| Fermi / Filter / saccade / tiling | Lexicon (+ woven in novel) |
+| Fermi / Filter / saccade | Lexicon (+ woven in novel) |
 | Corpse-Sky | Home epigraph + Pitch creed |
-| Phosphor CRT glass | Shared Ashen-Null optics |
+| Phosphor CRT glass | Shared Ashen-Null optics + Vurtek AUD bed |
 
-## UX fixes this pass
+## Writing law on home
 
-- Novel no longer buried in faint footer only  
-- Hub cards + global Menu  
-- Pitch Index includes Archives  
-- Same Menu on Archives / Gaze / Lexicon  
-
-## “Bestseller”
-
-We ship the strongest publishable edition we can: clean UX, coherent themes, immersive novel + Gaze. Commercial charts are not a code deliverable — craft and clarity are.
+- First sentences = **product for humans** (one franchise: novel → Maglite play)  
+- Diegetic Chrono line labeled **In play:**  
+- No “choose a surface” / unexplained appendix as primary CTA  

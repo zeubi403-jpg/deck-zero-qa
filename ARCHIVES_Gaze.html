@@ -3,126 +3,508 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Displaced Gaze · Calibration</title>
-<meta name="description" content="Feel the cut between Slot and camera — Displaced Gaze micro-experience for Silent Running.">
+<title>Displaced Gaze · Feel Chapter 01</title>
+<meta name="description" content="Not a second story — an optional interactive feel of Displaced Gaze from Silent Running Chapter 01: The Third Millimeter. Slot versus camera nodule.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#020805">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Displaced Gaze · Feel Chapter 01">
+<meta property="og:description" content="Optional micro-experience for Silent Running Chapter 01 — Slot vs camera nodule. Not a second novel.">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
-:root{--void:#020805;--phos:#4dff9a;--danger:#ff5555;--warn:#ffcc00;--ink:#c5ddd0;--mono:"IBM Plex Mono",monospace;--serif:"Instrument Serif",Georgia,serif}
+:root{
+  --void:#020805;--phos:#4dff9a;--danger:#ff5555;--warn:#ffcc00;--ink:#c5ddd0;--muted:#8aab9a;--faint:#5a7d6c;
+  --line:rgba(77,255,154,.22);--mono:"IBM Plex Mono",monospace;--serif:"Instrument Serif",Georgia,serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;background:var(--void);color:var(--ink);font-family:var(--mono);overflow:hidden}
-.hud{position:fixed;inset:0;display:flex;flex-direction:column}
-.top{display:flex;justify-content:space-between;align-items:center;padding:.6rem .9rem;border-bottom:1px solid rgba(77,255,154,.2);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;z-index:5;background:rgba(2,8,5,.9)}
+html[lang="en"] [data-lang="fr"]{display:none!important}
+html[lang="fr"] [data-lang="en"]{display:none!important}
+html,body{min-height:100%;background:var(--void);color:var(--ink);font-family:var(--mono)}
+body{padding-bottom:env(safe-area-inset-bottom)}
+.top{
+  position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;
+  padding:.65rem .9rem;border-bottom:1px solid var(--line);background:rgba(2,8,5,.96);
+  font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;gap:.5rem;flex-wrap:wrap
+}
 .top a{color:var(--phos);text-decoration:none}
-.stage{flex:1;position:relative;background:#000}
-.view{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity .05s linear;filter:contrast(1.05) saturate(.85)}
-.view.on{opacity:1}
-.view.slot{
-  background-image:url("media/archives/reel_sarcophagus_bolt_1788552247189.jpg");
-  clip-path: inset(38% 46% 38% 46%);
-  filter:contrast(1.2) brightness(.7) saturate(.5);
-}
-.view.cam{
-  background-image:url("media/archives/malachite_derelict_1788547966862.jpg");
-  filter:contrast(1.1) hue-rotate(40deg) saturate(.6) brightness(.85);
-}
-.view.cam::after{
-  content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.35) 2px,rgba(0,0,0,.35) 3px);
-  pointer-events:none;
-}
-.cut{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;z-index:3}
-.cut.flash{animation:cut .12s steps(2) forwards}
-@keyframes cut{0%{opacity:1}100%{opacity:0}}
-.vignette{position:absolute;inset:0;pointer-events:none;z-index:2;
-  background:radial-gradient(ellipse 70% 60% at 50% 50%,transparent 40%,rgba(0,0,0,.85) 100%)}
-.bottom{padding:.85rem 1rem 1.1rem;border-top:1px solid rgba(77,255,154,.2);background:rgba(2,8,5,.95);z-index:5}
-.meter-label{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;color:#8aab9a}
-.meter{height:10px;border:1px solid rgba(77,255,154,.35);background:#0a140f;position:relative}
-.meter > i{display:block;height:100%;width:18%;background:var(--phos);transition:width .2s,background .2s}
-.row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.75rem}
-button{
+.tools{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap}
+.tools button,.lang button{
   font:inherit;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
-  padding:.65rem .85rem;border:1px solid var(--phos);background:transparent;color:var(--phos);cursor:pointer;
+  padding:.4rem .55rem;border:1px solid rgba(77,255,154,.28);background:rgba(4,14,10,.85);
+  color:var(--muted);cursor:pointer;min-height:36px
 }
-button.primary{background:var(--phos);color:var(--void)}
-button:disabled{opacity:.35;cursor:not-allowed}
-.note{margin-top:.7rem;font-family:var(--serif);font-size:.95rem;line-height:1.45;color:#9bb8a8;max-width:40rem}
-.warn{color:var(--warn)}.crit{color:var(--danger)}
+.tools button.on,.tools button[aria-pressed="true"],.lang button.on{color:var(--void);background:var(--phos);border-color:var(--phos)}
+.wrap{max-width:68rem;margin:0 auto;padding:1rem clamp(.85rem,3vw,1.4rem) 2.5rem}
+.badge{
+  display:inline-block;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--phos);border:1px solid var(--line);padding:.3rem .5rem;margin-bottom:.65rem;background:rgba(4,14,10,.7)
+}
+h1{font-size:clamp(1.25rem,3.5vw,1.85rem);color:#eefaf3;letter-spacing:.04em;text-transform:uppercase;margin-bottom:.45rem}
+.lead{font-family:var(--serif);font-size:clamp(1.02rem,2.4vw,1.18rem);line-height:1.55;color:#d0e8da;max-width:40rem;margin-bottom:.85rem}
+.facts{
+  font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+  border:1px solid var(--line);padding:.75rem .85rem;margin-bottom:1.1rem;background:rgba(4,14,10,.55);max-width:42rem;line-height:1.65
+}
+.facts b{color:var(--phos);font-weight:500}
+.facts li{list-style:none;margin:.2rem 0}
+.grid{display:grid;gap:1rem}
+@media(min-width:900px){.grid{grid-template-columns:1.55fr .95fr}}
+.vp{
+  position:relative;aspect-ratio:16/10;background:#040705;border:2px solid rgba(77,255,154,.28);
+  overflow:hidden;box-shadow:0 0 32px rgba(30,70,40,.25)
+}
+.vp.shake{transform:translateY(2px)}
+.scan{position:absolute;inset:0;pointer-events:none;z-index:8;opacity:.28;
+  background:linear-gradient(rgba(18,30,20,0) 50%,rgba(0,0,0,.75) 50%);background-size:100% 4px}
+.flick{position:absolute;inset:0;background:rgba(134,232,115,.18);pointer-events:none;z-index:9;opacity:0}
+.flick.on{opacity:1}
+.oil{
+  position:absolute;inset:0;z-index:10;display:none;align-items:center;justify-content:center;
+  background:rgba(244,224,158,.28);backdrop-filter:blur(2px);text-align:center;padding:1rem
+}
+.oil.on{display:flex}
+.oil span{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#ffeea1;background:#000;border:1px solid #ffeea1;padding:.45rem .65rem}
+.layer{position:absolute;inset:0;opacity:0;pointer-events:none}
+.layer.on{opacity:1;pointer-events:auto}
+.layer img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.slot-mask{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.iron{background:rgba(8,13,9,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:.55rem;gap:.2rem}
+.iron.top{height:36%;border-bottom:3px solid #253f2a}
+.iron.bot{height:36%;border-top:3px solid #253f2a}
+.slit{
+  height:28%;display:flex;align-items:center;justify-content:space-between;gap:.4rem;padding:0 .6rem;
+  border-top:2px solid #599160;border-bottom:2px solid #599160;box-shadow:0 0 22px rgba(40,110,50,.45)
+}
+.chip{font-size:.52rem;letter-spacing:.08em;text-transform:uppercase;color:#b6ff9e;background:rgba(0,0,0,.65);border:1px solid #3e754a;padding:.25rem .4rem;white-space:nowrap}
+.chip.mid{color:#e1f5de;border-color:#2b5434}
+.tiny{font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;color:#4e6b52;text-align:center}
+.hud{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;justify-content:space-between;padding:.65rem;color:var(--phos)}
+.hud-bar{display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap;font-size:.55rem;letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(6,16,9,.85);border:1px solid #284f30;padding:.4rem .55rem}
+.hud-mid{flex:1;margin:.5rem 0;border:1px solid #3e754a;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:.85rem;position:relative}
+.hud-card{max-width:28rem;background:rgba(0,0,0,.78);border:1px solid #2b5934;padding:.75rem;text-align:center}
+.hud-card .t{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#b6ff9e;margin-bottom:.4rem}
+.hud-card p{font-family:var(--serif);font-size:.9rem;line-height:1.45;color:#9bb8a8}
+.warn-chip{display:inline-block;margin-top:.55rem;font-size:.55rem;letter-spacing:.08em;text-transform:uppercase;
+  padding:.3rem .5rem;border:1px solid #3e754a;background:#132c18;color:#9eff85}
+.warn-chip.hot{border-color:#6b2c2c;background:#2b1717;color:#ff9999}
+.cross{position:absolute;width:14px;height:14px;border-color:var(--phos)}
+.cross.tl{top:8px;left:8px;border-top:2px solid;border-left:2px solid}
+.cross.tr{top:8px;right:8px;border-top:2px solid;border-right:2px solid}
+.cross.bl{bottom:8px;left:8px;border-bottom:2px solid;border-left:2px solid}
+.cross.br{bottom:8px;right:8px;border-bottom:2px solid;border-right:2px solid}
+.knee-grid{
+  width:min(100%,22rem);height:5.5rem;margin:0 auto .65rem;border:1px solid #284f30;
+  background:linear-gradient(to right,#1b3d22 1px,transparent 1px),linear-gradient(to bottom,#1b3d22 1px,transparent 1px);
+  background-size:16px 16px;display:flex;align-items:center;justify-content:center
+}
+.panel{border:1px solid var(--line);background:rgba(4,14,10,.75);padding:.85rem}
+.panel h2{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--phos);margin-bottom:.65rem}
+.mode{
+  width:100%;text-align:left;font:inherit;cursor:pointer;padding:.7rem .75rem;margin:0 0 .45rem;
+  border:1px solid #1b2b1f;background:#121c15;color:#869986;min-height:44px
+}
+.mode.on{background:#1e3824;color:#b6ff9e;border-color:#448352;box-shadow:0 0 12px rgba(70,160,80,.2)}
+.mode .n{font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;gap:.5rem}
+.mode .d{font-size:.58rem;letter-spacing:.04em;text-transform:uppercase;color:#718c72;margin-top:.25rem;line-height:1.4}
+.tag{font-size:.5rem;padding:.15rem .35rem;border:1px solid #23422a;background:#0e1711;color:#71d35f;white-space:nowrap}
+.tag.warn{border-color:#52441f;background:#2b2512;color:#ffde6a}
+.tag.hot{border-color:#5e2626;background:#331818;color:#ff8080}
+.meter-label{display:flex;justify-content:space-between;font-size:.58rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.meter{height:12px;border:1px solid rgba(77,255,154,.35);background:#0a140f;padding:1px}
+.meter > i{display:block;height:100%;width:18%;background:var(--phos);transition:width .25s,background .25s}
+.note{font-family:var(--serif);font-size:.95rem;line-height:1.5;color:#9bb8a8;margin-top:.65rem}
+.actions{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.85rem}
+.actions button,.cta a{
+  font:inherit;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:.65rem .8rem;border:1px solid var(--phos);background:transparent;color:var(--phos);
+  cursor:pointer;min-height:44px;text-decoration:none;display:inline-flex;align-items:center
+}
+.actions button.primary,.cta a.primary{background:var(--phos);color:var(--void)}
+.actions button:disabled{opacity:.4;cursor:not-allowed}
+.cta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.15rem;padding-top:1rem;border-top:1px solid var(--line)}
+.guide{
+  margin-bottom:1rem;border:1px solid rgba(77,255,154,.4);background:rgba(77,255,154,.08);
+  padding:.85rem 1rem;max-width:42rem
+}
+.guide .step{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--phos);margin-bottom:.35rem}
+.guide p{font-family:var(--serif);font-size:1rem;line-height:1.5;color:#d0e8da}
+html.optics-lo .scan{opacity:.12}
+.crit{color:var(--danger)}.amber{color:var(--warn)}
 </style>
 </head>
 <body>
-<div class="hud">
-  <div class="top">
-    <a href="ARCHIVES_Silent_Running.html">← Novel</a>
-    <span id="modeLbl">SLOT · 3mm</span>
-    <div style="display:flex;gap:.4rem;align-items:center">
-      <div data-dz-site-menu></div>
-      <a href="index.html">Home</a>
+<header class="top">
+  <a href="ARCHIVES_Silent_Running.html" id="backNovel"><span data-lang="en">← Novel</span><span data-lang="fr">← Roman</span></a>
+  <span id="modeLbl">SLOT · 3mm</span>
+  <div class="tools">
+    <button type="button" data-audio-mute aria-pressed="false">AUD</button>
+    <button type="button" data-optics-lo aria-pressed="false">LO</button>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="langEn" class="on">EN</button>
+      <button type="button" id="langFr">FR</button>
     </div>
+    <div data-dz-site-menu></div>
+    <a href="index.html" id="homeLink">Home</a>
   </div>
-  <div class="stage" id="stage">
-    <div class="view slot on" id="vSlot"></div>
-    <div class="view cam" id="vCam"></div>
-    <div class="cut" id="cut"></div>
-    <div class="vignette"></div>
-  </div>
-  <div class="bottom">
-    <div class="meter-label">Cognitive emissions · <span id="emVal">18%</span></div>
-    <div class="meter"><i id="emBar"></i></div>
-    <div class="row">
-      <button type="button" class="primary" id="btnToggle">Displace gaze</button>
-      <button type="button" id="btnSlurry">Inject slurry</button>
-      <button type="button" id="btnRead">Read Ch.01 — Third Millimeter</button>
-    </div>
-    <p class="note" id="note">Hold still. The Slot is three millimeters of real world. Switch, and you will feel the cut the brain usually edits out.</p>
-  </div>
-</div>
-<script>
-(function(){
-  let mode = "slot"; // slot | cam
-  let em = 18;
-  const bar = document.getElementById("emBar");
-  const emVal = document.getElementById("emVal");
-  const note = document.getElementById("note");
-  const modeLbl = document.getElementById("modeLbl");
-  const cut = document.getElementById("cut");
-  const vSlot = document.getElementById("vSlot");
-  const vCam = document.getElementById("vCam");
+</header>
 
-  function paint(){
-    bar.style.width = em + "%";
-    emVal.textContent = em + "%";
-    bar.style.background = em > 75 ? "var(--danger)" : em > 45 ? "var(--warn)" : "var(--phos)";
-    emVal.className = em > 75 ? "crit" : em > 45 ? "warn" : "";
-    if (em > 75) note.textContent = "CRITICAL flux. You are painting the dark with thought. Slurry — or the deck will answer.";
-    else if (em > 45) note.textContent = "Amber. Memory is starting to invent faces in the scanlines.";
-    else if (mode === "cam") note.textContent = "Camera nodule. Fish-eye CRT. Your meat is elsewhere — do not forget the wire.";
-    else note.textContent = "Slot. Three millimeters. Continuous world is a lie stitched from saccades.";
+<main class="wrap">
+  <div class="badge" data-lang="en">Not a second story · optional feel of Chapter 01</div>
+  <div class="badge" data-lang="fr">Pas un second roman · sensation optionnelle du chapitre 01</div>
+  <h1 data-lang="en">Displaced Gaze</h1>
+  <h1 data-lang="fr">Regard déplacé</h1>
+  <p class="lead" data-lang="en"><em>The Third Millimeter</em> is Chapter 01 of the novella <em>The Silent Running</em>. This page lets you feel that chapter’s hardest idea: looking out through three millimeters of iron — or parking your sense of “I” in a camera nodule on the suit.</p>
+  <p class="lead" data-lang="fr"><em>The Third Millimeter</em> est le chapitre 01 de la novella <em>The Silent Running</em>. Cette page vous fait sentir son idée la plus dure : regarder à travers trois millimètres de fer — ou garer le « je » dans un nodule caméra sur la combinaison.</p>
+
+  <ul class="facts" data-lang="en">
+    <li><b>What it is</b> — a short interactive feel of the Slot ↔ camera cut from Chapter 01.</li>
+    <li><b>What it is not</b> — not another novella, not Deck Zero Maglite boarding play.</li>
+    <li><b>Why it exists</b> — so the book’s hardest idea becomes a feeling before you read (or after).</li>
+  </ul>
+  <ul class="facts" data-lang="fr">
+    <li><b>Ce que c’est</b> — une courte sensation interactive de la coupe fente ↔ caméra du chapitre 01.</li>
+    <li><b>Ce que ce n’est pas</b> — pas une autre novella, pas l’abordage Maglite de Deck Zero.</li>
+    <li><b>Pourquoi</b> — pour que l’idée la plus dure du livre devienne une sensation avant (ou après) la lecture.</li>
+  </ul>
+
+  <div class="guide" id="guide">
+    <div class="step" id="guideStep">STEP 1 / 4</div>
+    <p id="guideText">Stay in the Slot. Feel how little world three millimeters gives you. Then displace.</p>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="vp" id="vp">
+        <div class="scan" id="scan" aria-hidden="true"></div>
+        <div class="flick" id="flick" aria-hidden="true"></div>
+        <div class="oil" id="oil" aria-hidden="true"><span>[ 4,000 PSI HYDRAULIC OIL VENTED // THERMAL SCATTER ]</span></div>
+
+        <!-- SLOT -->
+        <div class="layer on" data-view="slot">
+          <img src="media/archives/sapper_breach_rig_1788548939953.jpg" alt="">
+          <div class="slot-mask">
+            <div class="iron top">
+              <div class="tiny">// CAST GRAIN IRON SHIELDING · SPEC VK-882 //</div>
+              <div class="tiny">FARADAY ATTENUATION 100% · EM LEAK 0.00 dB</div>
+            </div>
+            <div class="slit">
+              <span class="chip">3MM RETINAL SIGHTLINE</span>
+              <span class="chip mid">MALACHITE AIRLOCK 4B</span>
+              <span class="chip">ANCHOR SECURE</span>
+            </div>
+            <div class="iron bot">
+              <div class="tiny">APERTURE 3.0 MM · LEAD GLASS INDEX 1.84</div>
+              <div class="tiny">COGNITIVE QUIET LOCKED · SERVO STANDBY</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHOULDER -->
+        <div class="layer" data-view="shoulder">
+          <img src="media/archives/malachite_derelict_1788547966862.jpg" alt="" style="filter:contrast(1.35) brightness(.72) hue-rotate(55deg)">
+          <div class="hud">
+            <div class="hud-bar"><span>● CAM 04 · STARBOARD SHOULDER</span><span>512×384 CRT</span></div>
+            <div class="hud-mid">
+              <span class="cross tl"></span><span class="cross tr"></span><span class="cross bl"></span><span class="cross br"></span>
+              <div class="hud-card">
+                <div class="t">Malachite main corridor · frost 14mm</div>
+                <p data-lang="en">You are thirty centimeters above the right shoulder. Helmet and spike driver align on airlock teeth. Meat is elsewhere.</p>
+                <p data-lang="fr">Vous êtes trente centimètres au-dessus de l’épaule droite. Casque et pique s’alignent sur les dents du sas. La viande est ailleurs.</p>
+                <div class="warn-chip">[ EM LEAK +0.42 dB · ATTRACTS ]</div>
+              </div>
+            </div>
+            <div class="hud-bar"><span>RAD 840 mSv</span><span class="crit">UNCOMPILED FOURIER AUDIBLE</span></div>
+          </div>
+        </div>
+
+        <!-- KNEE -->
+        <div class="layer" data-view="knee">
+          <div class="hud" style="background:#0b140e">
+            <div class="hud-bar"><span>CAM 01 · STARBOARD KNEE · 0.15M</span><span>PITCH −12°</span></div>
+            <div class="hud-mid" style="border-color:#214227;background:#061109;flex-direction:column">
+              <div class="knee-grid"><span class="chip">DECK ACOUSTIC 42.8 Hz</span></div>
+              <div class="hud-card">
+                <div class="t">Braided copper conduits</div>
+                <p data-lang="en">Non-periodic lattices under plating. Zinc film. The deck is listening for structured thought.</p>
+                <p data-lang="fr">Réseaux non périodiques sous le plancher. Film de zinc. Le pont écoute la pensée structurée.</p>
+                <div class="warn-chip hot">[ RECTIFIER CORE ACTIVE BELOW ]</div>
+              </div>
+            </div>
+            <div class="hud-bar"><span>CLAMP 02 LOCKED</span><span>FROST CRITICAL</span></div>
+          </div>
+        </div>
+
+        <!-- DRONE -->
+        <div class="layer" data-view="drone">
+          <img src="media/archives/chondrite_cyst_1788547990574.jpg" alt="" style="filter:contrast(1.2) brightness(.7)">
+          <div class="hud">
+            <div class="hud-bar"><span>SURVEY DRONE VK-9 · DAY 18</span><span class="amber">MARS TRANSFER</span></div>
+            <div class="hud-mid">
+              <div class="hud-card">
+                <div class="t">Harpoon 420 N · tether 30 m</div>
+                <p data-lang="en">Looking back at the Mark-IV tumbling in Jupiter’s shadow. Inside: body at near absolute cold. This is the tow view from the novel’s later drift.</p>
+                <p data-lang="fr">Regard en arrière sur le Mark-IV en rotation dans l’ombre de Jupiter. Dedans : le corps presque au zéro absolu. Vue du remorquage plus tard dans le roman.</p>
+                <div class="warn-chip">[ STEALTH: FROZEN INERT ]</div>
+              </div>
+            </div>
+            <div class="hud-bar"><span>BATTERY 18%</span><span>HIGH RISK NODE</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="primary" id="btnSlurry"><span data-lang="en">Inject neuro-slurry</span><span data-lang="fr">Injecter slurry</span></button>
+        <button type="button" id="btnSpike"><span data-lang="en">Fire pneumatic spike</span><span data-lang="fr">Tirer pique pneumatique</span></button>
+        <button type="button" id="btnOil"><span data-lang="en">Dump 4,000 PSI oil</span><span data-lang="fr">Vidanger huile 4000 PSI</span></button>
+        <button type="button" id="btnScan"><span data-lang="en">CRT scanlines</span><span data-lang="fr">Balayage CRT</span></button>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel">
+        <h2 data-lang="en">Gaze perspective</h2>
+        <h2 data-lang="fr">Perspective du regard</h2>
+        <button type="button" class="mode on" data-mode="slot">
+          <div class="n">3mm Iron Slot <span class="tag">SAFE</span></div>
+          <div class="d" data-lang="en">Physical eye · zero EM leak · claustrophobic</div>
+          <div class="d" data-lang="fr">Œil physique · zéro fuite EM · claustrophobe</div>
+        </button>
+        <button type="button" class="mode" data-mode="shoulder">
+          <div class="n">Shoulder nodule <span class="tag warn">+EM</span></div>
+          <div class="d" data-lang="en">Fish-eye CRT · Ch.01 cut · moderate leak</div>
+          <div class="d" data-lang="fr">CRT fisheye · coupe Ch.01 · fuite modérée</div>
+        </button>
+        <button type="button" class="mode" data-mode="knee">
+          <div class="n">Knee scanner <span class="tag">SCOUT</span></div>
+          <div class="d" data-lang="en">Deck angle · copper braid inspection</div>
+          <div class="d" data-lang="fr">Angle pont · inspection tresse cuivre</div>
+        </button>
+        <button type="button" class="mode" data-mode="drone">
+          <div class="n">Survey drone VK-9 <span class="tag hot">HIGH</span></div>
+          <div class="d" data-lang="en">30 m tether · corpse-in-iron observation</div>
+          <div class="d" data-lang="fr">Câble 30 m · observation du corps dans le fer</div>
+        </button>
+      </div>
+
+      <div class="panel" style="margin-top:.75rem">
+        <div class="meter-label">
+          <span data-lang="en">Cognitive emissions</span>
+          <span data-lang="fr">Émissions cognitives</span>
+          <strong id="emVal">18%</strong>
+        </div>
+        <div class="meter"><i id="emBar"></i></div>
+        <p class="note" id="note">Thermodynamic quiet. Mind flattened. Invisible to ambient sensors.</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="cta" aria-label="Continue">
+    <a class="primary" id="ctaRead" href="ARCHIVES_Silent_Running.html#prologue"><span data-lang="en">Read Ch.01 — The Third Millimeter</span><span data-lang="fr">Lire Ch.01 — The Third Millimeter</span></a>
+    <a id="ctaBrief" href="DECK_ZERO_Pitch.html"><span data-lang="en">Open Maglite Brief (Deck Zero)</span><span data-lang="fr">Ouvrir le Brief Maglite (Deck Zero)</span></a>
+    <a id="ctaHome" href="index.html"><span data-lang="en">Home</span><span data-lang="fr">Accueil</span></a>
+  </nav>
+</main>
+
+<script src="dz-terminal.js"></script>
+<script src="dz-site-menu.js"></script>
+<script>
+(function () {
+  var DZ = window.DZ;
+  var mode = "slot";
+  var em = 18;
+  var slurry = false;
+  var scanOn = true;
+  var seen = { slot: true, shoulder: false, knee: false, drone: false, slurry: false };
+  var bar = document.getElementById("emBar");
+  var emVal = document.getElementById("emVal");
+  var note = document.getElementById("note");
+  var modeLbl = document.getElementById("modeLbl");
+  var vp = document.getElementById("vp");
+  var flick = document.getElementById("flick");
+  var oil = document.getElementById("oil");
+  var scan = document.getElementById("scan");
+  var guideStep = document.getElementById("guideStep");
+  var guideText = document.getElementById("guideText");
+  var guide = document.getElementById("guide");
+
+  function lang() {
+    return document.documentElement.lang === "fr" ? "fr" : "en";
   }
-  function flash(){
-    cut.classList.remove("flash");
-    void cut.offsetWidth;
-    cut.classList.add("flash");
-  }
-  function setMode(m){
-    mode = m;
-    flash();
-    vSlot.classList.toggle("on", m === "slot");
-    vCam.classList.toggle("on", m === "cam");
-    modeLbl.textContent = m === "slot" ? "SLOT · 3mm" : "NODULE · DISPLACED";
-    em = Math.min(98, em + (m === "cam" ? 14 : 8));
+  function setLang(l) {
+    l = l === "fr" ? "fr" : "en";
+    document.documentElement.lang = l;
+    try {
+      localStorage.setItem("dz_lang", l);
+      localStorage.setItem("dz-lang", l);
+    } catch (_) {}
+    document.getElementById("langEn").classList.toggle("on", l === "en");
+    document.getElementById("langFr").classList.toggle("on", l === "fr");
+    var q = "?lang=" + l;
+    ["backNovel", "homeLink", "ctaRead", "ctaBrief", "ctaHome"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var href = el.getAttribute("href") || "";
+      var hash = href.indexOf("#") >= 0 ? "#" + href.split("#")[1] : "";
+      var base = href.split("?")[0].split("#")[0];
+      el.href = base + q + hash;
+    });
+    if (window.DZSiteMenu && DZSiteMenu.boot) {
+      document.querySelectorAll("[data-dz-site-menu]").forEach(function (el) {
+        el.dataset.dzMounted = "0";
+        el.innerHTML = "";
+        el.classList.remove("dz-site-menu", "open");
+      });
+      DZSiteMenu.boot();
+    }
+    if (DZ && DZ.syncLabels) DZ.syncLabels();
+    paintGuide();
     paint();
   }
-  document.getElementById("btnToggle").onclick = () => setMode(mode === "slot" ? "cam" : "slot");
-  document.getElementById("btnSlurry").onclick = () => { em = Math.max(8, em - 28); paint(); };
-  document.getElementById("btnRead").onclick = () => { location.href = "ARCHIVES_Silent_Running.html#prologue"; };
-  setInterval(() => { em = Math.min(96, em + (mode === "cam" ? 1.2 : 0.6)); paint(); }, 900);
+  document.getElementById("langEn").onclick = function () { setLang("en"); };
+  document.getElementById("langFr").onclick = function () { setLang("fr"); };
+  try {
+    var q0 = new URLSearchParams(location.search).get("lang");
+    var s0 = localStorage.getItem("dz_lang") || localStorage.getItem("dz-lang");
+    setLang(q0 === "fr" || q0 === "en" ? q0 : s0 === "fr" ? "fr" : "en");
+  } catch (_) { setLang("en"); }
+
+  function paintGuide() {
+    var fr = lang() === "fr";
+    var step = 1;
+    var text = fr
+      ? "Restez dans la fente. Sentez le peu de monde que donnent trois millimètres. Puis déplacez."
+      : "Stay in the Slot. Feel how little world three millimeters gives you. Then displace.";
+    if (seen.shoulder) {
+      step = 2;
+      text = fr
+        ? "Vous avez senti la coupe. Injectez le slurry pour aplatir le flux cognitif — comme Nailer."
+        : "You felt the cut. Inject slurry to flatten cognitive flux — as Nailer does.";
+    }
+    if (seen.slurry) {
+      step = 3;
+      text = fr
+        ? "Essayez genou ou drone. Chaque nœud fuit plus. Puis lisez le chapitre qui porte ce nom."
+        : "Try knee or drone. Each node leaks more. Then read the chapter that names this.";
+    }
+    if (seen.knee || seen.drone) {
+      step = 4;
+      text = fr
+        ? "Vous avez senti la coupe. Lisez Ch.01 — The Third Millimeter — ou ouvrez le Brief Maglite."
+        : "You’ve felt the cut. Read Ch.01 — The Third Millimeter — or open the Maglite Brief.";
+      guide.style.borderColor = "rgba(77,255,154,.55)";
+    }
+    guideStep.textContent = (fr ? "ÉTAPE " : "STEP ") + step + " / 4";
+    guideText.textContent = text;
+  }
+
+  function paint() {
+    bar.style.width = em + "%";
+    emVal.textContent = Math.round(em) + "%";
+    emVal.className = em > 75 ? "crit" : em > 45 ? "amber" : "";
+    bar.style.background = em > 75 ? "var(--danger)" : em > 45 ? "var(--warn)" : "var(--phos)";
+    var fr = lang() === "fr";
+    if (em > 75) {
+      note.textContent = fr
+        ? "FLUX CRITIQUE. Vous peignez le noir avec la pensée. Injectez le slurry — ou le pont répond."
+        : "CRITICAL flux. You are painting the dark with thought. Inject slurry — or the deck will answer.";
+    } else if (em > 45) {
+      note.textContent = fr
+        ? "Ambre. La mémoire invente des visages dans les balayages."
+        : "Amber. Memory invents faces in the scanlines.";
+    } else if (mode === "shoulder") {
+      note.textContent = fr
+        ? "Nodule épaule. CRT fisheye. Votre viande est ailleurs — n’oubliez pas le fil."
+        : "Shoulder nodule. Fish-eye CRT. Your meat is elsewhere — do not forget the wire.";
+    } else if (mode === "knee") {
+      note.textContent = fr
+        ? "Scanner genou. Le pont est une oreille de cuivre."
+        : "Knee scanner. The deck is a copper ear.";
+    } else if (mode === "drone") {
+      note.textContent = fr
+        ? "Drone VK-9. Vous regardez votre propre sarcophage."
+        : "Drone VK-9. You are looking at your own sarcophagus.";
+    } else {
+      note.textContent = fr
+        ? "Fente. Trois millimètres. Le monde continu est un mensonge cousu de saccades."
+        : "Slot. Three millimeters. Continuous world is a lie stitched from saccades.";
+    }
+    paintGuide();
+  }
+
+  function setMode(m) {
+    mode = m;
+    seen[m] = true;
+    document.querySelectorAll(".layer").forEach(function (el) {
+      el.classList.toggle("on", el.getAttribute("data-view") === m);
+    });
+    document.querySelectorAll(".mode").forEach(function (b) {
+      b.classList.toggle("on", b.getAttribute("data-mode") === m);
+    });
+    modeLbl.textContent =
+      m === "slot" ? "SLOT · 3mm" :
+      m === "shoulder" ? "NODULE · SHOULDER" :
+      m === "knee" ? "NODULE · KNEE" : "DRONE · VK-9";
+    em = Math.min(98, em + (m === "slot" ? 0 : m === "drone" ? 16 : 12));
+    flick.classList.add("on");
+    setTimeout(function () { flick.classList.remove("on"); }, 160);
+    if (DZ) {
+      if (DZ.playGazeCut) DZ.playGazeCut();
+      if (DZ.unlock) DZ.unlock();
+    }
+    paint();
+  }
+
+  document.querySelectorAll(".mode").forEach(function (b) {
+    b.addEventListener("click", function () {
+      setMode(b.getAttribute("data-mode"));
+    });
+  });
+
+  document.getElementById("btnSlurry").onclick = function () {
+    slurry = true;
+    seen.slurry = true;
+    em = 14;
+    if (DZ && DZ.playInjection) DZ.playInjection();
+    paint();
+    var btn = this;
+    btn.disabled = true;
+    setTimeout(function () {
+      slurry = false;
+      btn.disabled = false;
+    }, 6000);
+  };
+  document.getElementById("btnSpike").onclick = function () {
+    if (DZ && DZ.playSpikeFire) DZ.playSpikeFire();
+    else if (DZ && DZ.playPneumaticHiss) DZ.playPneumaticHiss();
+    vp.classList.add("shake");
+    em = Math.min(96, em + 6);
+    paint();
+    setTimeout(function () { vp.classList.remove("shake"); }, 420);
+  };
+  document.getElementById("btnOil").onclick = function () {
+    if (DZ && DZ.playPneumaticHiss) DZ.playPneumaticHiss();
+    oil.classList.add("on");
+    setTimeout(function () { oil.classList.remove("on"); }, 1100);
+  };
+  document.getElementById("btnScan").onclick = function () {
+    scanOn = !scanOn;
+    scan.style.display = scanOn ? "" : "none";
+    this.classList.toggle("on", scanOn);
+  };
+  document.getElementById("btnScan").classList.add("on");
+
+  setInterval(function () {
+    if (slurry) em = Math.max(12, em - 2);
+    else {
+      var rate = mode === "slot" ? 0.35 : mode === "drone" ? 1.15 : 0.75;
+      em = Math.min(98, Math.round((em + rate) * 10) / 10);
+    }
+    paint();
+  }, 1000);
+
   paint();
 })();
 </script>
-<script src="dz-site-menu.js"></script>
 </body>
 </html>

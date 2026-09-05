@@ -58,9 +58,9 @@
     var fr = lang() === "fr";
     return [
       { href: "index.html", en: "Home · Deck Zero", fr: "Accueil · Deck Zero" },
-      { href: "DECK_ZERO_Pitch.html", en: "1 · Open dossier (play Brief)", fr: "1 · Ouvrir le dossier (Brief)" },
-      { href: "ARCHIVES_Silent_Running.html", en: "2 · Read the novel", fr: "2 · Lire le roman" },
-      { href: "ARCHIVES_Gaze.html", en: "3 · Displaced Gaze", fr: "3 · Regard déplacé" },
+      { href: "ARCHIVES_Silent_Running.html", en: "1 · Read the novel", fr: "1 · Lire le roman" },
+      { href: "DECK_ZERO_Pitch.html", en: "2 · Open dossier (play Brief)", fr: "2 · Ouvrir le dossier (Brief)" },
+      { href: "ARCHIVES_Gaze.html", en: "3 · Feel Ch.01 · Displaced Gaze", fr: "3 · Sentir Ch.01 · Regard déplacé" },
       { href: "ARCHIVES_Lexicon.html", en: "4 · Hard-SF lexicon", fr: "4 · Lexique hard-SF" },
       {
         href: "media/archives/THE_SILENT_RUNNING.md",
@@ -70,6 +70,14 @@
     ].map(function (L) {
       return { href: href(L.href), label: fr ? L.fr : L.en };
     });
+  }
+
+  function sfx(name) {
+    var dz = global.DZ;
+    if (!dz || typeof dz[name] !== "function") return;
+    try {
+      dz[name]();
+    } catch (_) {}
   }
 
   function mountMenu(host) {
@@ -94,6 +102,9 @@
       a.href = L.href;
       a.textContent = L.label;
       a.setAttribute("role", "menuitem");
+      a.addEventListener("click", function () {
+        sfx("playPneumaticHiss");
+      });
       panel.appendChild(a);
     });
     btn.addEventListener("click", function (e) {
@@ -101,6 +112,7 @@
       var open = !host.classList.contains("open");
       host.classList.toggle("open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
+      if (open) sfx("playRelayClick");
     });
     document.addEventListener("click", function () {
       host.classList.remove("open");
@@ -120,28 +132,28 @@
     var items = [
       {
         primary: true,
-        href: "DECK_ZERO_Pitch.html",
-        k: fr ? "Jouer · Brief" : "Play · Brief",
-        t: fr ? "Ouvrir le dossier" : "Open dossier",
-        d: fr
-          ? "Lames Maglite / Chrono / Cairn-9. Avancez le log optique."
-          : "Maglite / Chrono / Cairn-9 knives. Advance the optical log."
-      },
-      {
         href: "ARCHIVES_Silent_Running.html",
         k: fr ? "Lire · Roman" : "Read · Novel",
         t: "The Silent Running",
         d: fr
-          ? "Novella hard sci-fi complète. Préquelle fer scellé."
-          : "Full hard sci-fi novella. Sealed-iron prequel."
+          ? "Novella hard sci-fi complète. Préquelle fer scellé — le dossier avant Maglite."
+          : "Full hard sci-fi novella. Sealed-iron prequel — the case before Maglite."
+      },
+      {
+        href: "DECK_ZERO_Pitch.html",
+        k: fr ? "Jouer · Brief" : "Play · Brief",
+        t: fr ? "Ouvrir le dossier" : "Open dossier",
+        d: fr
+          ? "Maglite · Chrono · Cairn-9. Le Brief d’abordage du jeu."
+          : "Maglite · Chrono · Cairn-9. The boarding Brief for the playable game."
       },
       {
         href: "ARCHIVES_Gaze.html",
         k: fr ? "Sentir · Regard" : "Feel · Gaze",
         t: fr ? "Regard déplacé" : "Displaced Gaze",
         d: fr
-          ? "Micro-expérience : Slot 3mm ↔ caméra. Sentir la coupe."
-          : "Micro-experience: 3mm Slot ↔ camera. Feel the cut."
+          ? "Sensation optionnelle : fente 3 mm ↔ caméra. Chapitre 01."
+          : "Optional feel: 3mm Slot ↔ camera. Chapter 01."
       },
       {
         href: "ARCHIVES_Lexicon.html",
@@ -164,6 +176,9 @@
         '</div><div class="d">' +
         it.d +
         "</div>";
+      a.addEventListener("click", function () {
+        sfx(it.href.indexOf("Gaze") >= 0 ? "playGazeCut" : "playPneumaticHiss");
+      });
       host.appendChild(a);
     });
   }

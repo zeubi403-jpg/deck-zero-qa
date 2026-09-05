@@ -128,7 +128,7 @@
     if (!humNodes) return;
     try {
       humNodes.gain.gain.cancelScheduledValues(ctx ? ctx.currentTime : 0);
-      if (ctx) humNodes.gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.2);
+      if (ctx) humNodes.gain.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.25);
       setTimeout(function () {
         try {
           (humNodes.oscs || []).forEach(function (o) {
@@ -136,78 +136,75 @@
               o.stop();
             } catch (_) {}
           });
+          if (humNodes.noise) {
+            try {
+              humNodes.noise.stop();
+            } catch (_) {}
+          }
         } catch (_) {}
         humNodes = null;
-      }, 260);
+      }, 320);
     } catch (_) {
       humNodes = null;
     }
   }
 
+  /* Vurtek Main SoundEngine ambient — 36/40 Hz reactor + bandpass scrubber.
+     Phone-only faint mid body so tinny speakers still read atmosphere; desktop stays pure Vurtek. */
   function startHum() {
     if (muted || reduce) return;
     var c = ensureCtx();
     if (!c || humNodes) return;
     function build() {
       if (humNodes || muted || reduce) return;
+      var gain = c.createGain();
+      gain.gain.value = 0;
+
       var osc1 = c.createOscillator();
       var osc2 = c.createOscillator();
-      var oscBody = c.createOscillator();
-      var oscAir = c.createOscillator();
-      var lfo = c.createOscillator();
-      var lfoGain = c.createGain();
-      var gain = c.createGain();
-      var filter = c.createBiquadFilter();
-      var bodyGain = c.createGain();
-      var airGain = c.createGain();
-      /* True bed — headphones / desktop hear this; phone speakers mostly don't. */
       osc1.type = "sine";
-      osc1.frequency.value = 62;
+      osc1.frequency.value = 36;
       osc2.type = "triangle";
-      osc2.frequency.value = 118;
-      /* Phone-passband body — carries the same “warmth” on tinny speakers. */
-      oscBody.type = "sine";
-      oscBody.frequency.value = phoneAudio ? 196 : 155;
-      bodyGain.gain.value = phoneAudio ? (opticsLo ? 0.55 : 0.7) : opticsLo ? 0.2 : 0.28;
-      oscAir.type = "sine";
-      oscAir.frequency.value = phoneAudio ? 245 : 210;
-      airGain.gain.value = phoneAudio ? (opticsLo ? 0.22 : 0.32) : opticsLo ? 0.08 : 0.12;
-      lfo.type = "sine";
-      lfo.frequency.value = 0.07;
-      lfoGain.gain.value = phoneAudio ? 0.018 : 0.012;
-      filter.type = "lowpass";
-      filter.frequency.value = phoneAudio ? 620 : 320;
-      filter.Q.value = 0.7;
-      gain.gain.value = 0;
-      lfo.connect(lfoGain);
-      lfoGain.connect(gain.gain);
-      osc1.connect(filter);
-      osc2.connect(filter);
-      oscBody.connect(bodyGain);
-      bodyGain.connect(filter);
-      oscAir.connect(airGain);
-      airGain.connect(filter);
-      filter.connect(gain);
+      osc2.frequency.value = 40;
+
+      var bufferSize = Math.floor(c.sampleRate * 2);
+      var noiseBuffer = c.createBuffer(1, bufferSize, c.sampleRate);
+      var data = noiseBuffer.getChannelData(0);
+      for (var i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * 0.4;
+      var noise = c.createBufferSource();
+      noise.buffer = noiseBuffer;
+      noise.loop = true;
+      var noiseFilter = c.createBiquadFilter();
+      noiseFilter.type = "bandpass";
+      noiseFilter.frequency.value = opticsLo ? 180 : 220;
+      noiseFilter.Q.value = 1.5;
+
+      osc1.connect(gain);
+      osc2.connect(gain);
+      noise.connect(noiseFilter);
+      noiseFilter.connect(gain);
+
+      var oscs = [osc1, osc2];
+      if (phoneAudio) {
+        var oscBody = c.createOscillator();
+        var bodyGain = c.createGain();
+        oscBody.type = "sine";
+        oscBody.frequency.value = 196;
+        bodyGain.gain.value = opticsLo ? 0.22 : 0.32;
+        oscBody.connect(bodyGain);
+        bodyGain.connect(gain);
+        oscBody.start();
+        oscs.push(oscBody);
+      }
+
       gain.connect(c.destination);
       osc1.start();
       osc2.start();
-      oscBody.start();
-      oscAir.start();
-      lfo.start();
-      /* Optics LO used to hard-mute the bed on mobile (LO is default on coarse).
-         Keep a thinner bed instead — visuals dim, audio still present. */
-      var target = opticsLo
-        ? phoneAudio
-          ? 0.034
-          : 0.014
-        : phoneAudio
-          ? 0.048
-          : 0.024;
-      gain.gain.linearRampToValueAtTime(target, c.currentTime + 1.1);
-      humNodes = {
-        oscs: [osc1, osc2, oscBody, oscAir, lfo],
-        gain: gain,
-      };
+      noise.start();
+
+      var target = muted ? 0 : opticsLo ? 0.055 : 0.08;
+      gain.gain.linearRampToValueAtTime(target, c.currentTime + 1.0);
+      humNodes = { oscs: oscs, noise: noise, gain: gain, master: gain };
     }
     if (c.state === "suspended") {
       c.resume().then(build).catch(build);
@@ -234,23 +231,162 @@
     o.stop(t0 + dur + 0.02);
   }
 
-  function beepLog() {
-    tone(880, 0.06, "square", 0.03);
+  function playNoiseBurst(dur, freqStart, freqEnd, vol) {
+    if (muted || reduce) return;
+    var c = ensureCtx();
+    if (!c) return;
+    var n = Math.floor(c.sampleRate * dur);
+    var buf = c.createBuffer(1, n, c.sampleRate);
+    var d = buf.getChannelData(0);
+    for (var i = 0; i < n; i++) d[i] = Math.random() * 2 - 1;
+    var src = c.createBufferSource();
+    src.buffer = buf;
+    var f = c.createBiquadFilter();
+    f.type = "bandpass";
+    f.frequency.setValueAtTime(freqStart, c.currentTime);
+    f.frequency.exponentialRampToValueAtTime(Math.max(80, freqEnd), c.currentTime + dur);
+    var g = c.createGain();
+    g.gain.setValueAtTime(vol || 0.16, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + dur);
+    src.connect(f);
+    f.connect(g);
+    g.connect(c.destination);
+    src.start();
+  }
+
+  /* —— Vurtek industrial SFX (ported) —— */
+  function playBootClack() {
+    if (muted || reduce) return;
+    var c = ensureCtx();
+    if (!c) return;
+    var o = c.createOscillator();
+    var g = c.createGain();
+    var f = c.createBiquadFilter();
+    o.type = "sawtooth";
+    o.frequency.setValueAtTime(140, c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(30, c.currentTime + 0.08);
+    f.type = "lowpass";
+    f.frequency.value = 320;
+    g.gain.setValueAtTime(0.3, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.1);
+    o.connect(f);
+    f.connect(g);
+    g.connect(c.destination);
+    o.start();
+    o.stop(c.currentTime + 0.1);
+  }
+  function playPneumaticHiss() {
+    playNoiseBurst(0.25, 1200, 400, 0.18);
+  }
+  function playRelayClick() {
+    if (muted || reduce) return;
+    var c = ensureCtx();
+    if (!c) return;
+    var o = c.createOscillator();
+    var g = c.createGain();
+    o.type = "square";
+    o.frequency.setValueAtTime(2400, c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(600, c.currentTime + 0.04);
+    g.gain.setValueAtTime(0.2, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.04);
+    o.connect(g);
+    g.connect(c.destination);
+    o.start();
+    o.stop(c.currentTime + 0.04);
+  }
+  function playGeigerBurst() {
+    if (muted || reduce) return;
+    var c = ensureCtx();
+    if (!c) return;
+    for (var i = 0; i < 4; i++) {
+      (function (delay) {
+        var o = c.createOscillator();
+        var g = c.createGain();
+        o.type = "triangle";
+        o.frequency.setValueAtTime(1800 + Math.random() * 600, c.currentTime + delay);
+        g.gain.setValueAtTime(0.08, c.currentTime + delay);
+        g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + delay + 0.015);
+        o.connect(g);
+        g.connect(c.destination);
+        o.start(c.currentTime + delay);
+        o.stop(c.currentTime + delay + 0.02);
+      })(i * 0.03 + Math.random() * 0.02);
+    }
+  }
+  function playInjection() {
+    if (muted || reduce) return;
+    var c = ensureCtx();
+    if (!c) return;
+    var o = c.createOscillator();
+    var g = c.createGain();
+    o.type = "sine";
+    o.frequency.setValueAtTime(880, c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(220, c.currentTime + 0.35);
+    g.gain.setValueAtTime(0.15, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.35);
+    o.connect(g);
+    g.connect(c.destination);
+    o.start();
+    o.stop(c.currentTime + 0.35);
+  }
+  function playGazeCut() {
+    playRelayClick();
     setTimeout(function () {
-      tone(660, 0.05, "square", 0.022);
-    }, 40);
+      playNoiseBurst(0.08, 2000, 600, 0.1);
+    }, 20);
+  }
+  function playSpikeFire() {
+    if (muted || reduce) return;
+    var c = ensureCtx();
+    if (!c) return;
+    var o = c.createOscillator();
+    var g = c.createGain();
+    o.type = "triangle";
+    o.frequency.setValueAtTime(160, c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(30, c.currentTime + 0.25);
+    g.gain.setValueAtTime(0.32, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.25);
+    o.connect(g);
+    g.connect(c.destination);
+    o.start();
+    o.stop(c.currentTime + 0.25);
+    playPneumaticHiss();
+  }
+  function playTransmissionStatic() {
+    if (muted || reduce) return;
+    var c = ensureCtx();
+    if (!c) return;
+    var o = c.createOscillator();
+    var g = c.createGain();
+    o.type = "sawtooth";
+    o.frequency.setValueAtTime(1420, c.currentTime);
+    o.frequency.exponentialRampToValueAtTime(840, c.currentTime + 0.18);
+    g.gain.setValueAtTime(0.12, c.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, c.currentTime + 0.18);
+    o.connect(g);
+    g.connect(c.destination);
+    o.start();
+    o.stop(c.currentTime + 0.18);
+    playNoiseBurst(0.15, 1600, 500, 0.1);
+  }
+
+  function beepLog() {
+    playRelayClick();
+    setTimeout(playGeigerBurst, 45);
   }
   function beepSoft() {
-    tone(520, 0.05, "sine", 0.025);
+    playRelayClick();
   }
   function beepHash() {
     tone(240, 0.04, "sawtooth", 0.018);
     setTimeout(function () {
       tone(190, 0.08, "sawtooth", 0.014);
     }, 30);
+    playTransmissionStatic();
   }
   function beepBoot() {
-    tone(420, 0.05, "sine", 0.03);
+    playBootClack();
+    setTimeout(playPneumaticHiss, 60);
   }
 
   function setMuted(on) {
@@ -268,11 +404,11 @@
       b.textContent = muted ? (lang === "fr" ? "SON OFF" : "AUD OFF") : lang === "fr" ? "SON" : "AUD";
       b.title = muted
         ? lang === "fr"
-          ? "Réactiver l’audio optique"
-          : "Enable optical audio"
+          ? "Réactiver atmosphère Vurtek (réacteur 36/40 Hz)"
+          : "Enable Vurtek atmosphere (36/40 Hz reactor)"
         : lang === "fr"
-          ? "Couper l’audio optique"
-          : "Mute optical audio";
+          ? "Couper atmosphère Vurtek"
+          : "Mute Vurtek atmosphere";
     });
   }
 
@@ -381,6 +517,14 @@
     beepSoft: beepSoft,
     beepHash: beepHash,
     beepBoot: beepBoot,
+    playBootClack: playBootClack,
+    playPneumaticHiss: playPneumaticHiss,
+    playRelayClick: playRelayClick,
+    playGeigerBurst: playGeigerBurst,
+    playInjection: playInjection,
+    playGazeCut: playGazeCut,
+    playSpikeFire: playSpikeFire,
+    playTransmissionStatic: playTransmissionStatic,
     startHum: startHum,
     stopHum: stopHum,
     unlock: unlockOnGesture,

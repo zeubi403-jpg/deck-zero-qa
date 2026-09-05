@@ -8,11 +8,11 @@
   "cover": "vurtek_cover_art_1788547947808.jpg",
   "logline_en": "Before Maglite boarding, there was sealed iron — debt, a three-millimeter slot, and a love Vurtek amortized like ore.",
   "logline_fr": "Avant l’abordage Maglite, il y avait le fer scellé — la dette, une fente de trois millimètres, et un amour que Vurtek amortissait comme du minerai.",
-  "pitch_en": "A standalone hard sci-fi novella: faces first, physics as horror, corporation as predator. Non-conscious silence. Saccades you can feel. Structures that never repeat. Accessible as tragedy — deep enough for theorists. Deck Zero is the later play surface — optional, never required.",
-  "pitch_fr": "Une novella hard sci-fi autonome : les visages d’abord, la physique comme horreur, la corporation comme prédateur. Silence non conscient. Saccades qu’on sent. Structures qui ne se répètent pas. Accessible comme tragédie — assez profonde pour les théoriciens. Deck Zero est la surface de jeu plus tard — optionnelle, jamais obligatoire.",
+  "pitch_en": "A standalone hard sci-fi novella: faces first, physics as horror, corporation as predator. Non-conscious silence. Saccades you can feel. Structures that never repeat. Accessible as tragedy — deep enough for theorists. Deck Zero is the later boarding game — optional, never required.",
+  "pitch_fr": "Une novella hard sci-fi autonome : les visages d’abord, la physique comme horreur, la corporation comme prédateur. Silence non conscient. Saccades qu’on sent. Structures qui ne se répètent pas. Accessible comme tragédie — assez profonde pour les théoriciens. Deck Zero est le jeu d’abordage plus tard — optionnel, jamais obligatoire.",
   "bridge": {
-    "en": "Same corporation. Earlier war in sealed iron — then Maglite boarding and a second you can freeze. The novel is the case; Deck Zero is the play.",
-    "fr": "Même corporation. Guerre plus tôt en fer scellé — puis abordage Maglite et une seconde que tu peux geler. Le roman est le dossier ; Deck Zero est le jeu."
+    "en": "Same corporation. Earlier war in sealed iron — Nailer’s Mark-IV sarcophagus and the 3mm Slot — then Maglite Faraday boarding armor and a second you can freeze. Two suit doctrines; cameras never merge. The novel is the case; Deck Zero is the play.",
+    "fr": "Même corporation. Guerre plus tôt en fer scellé — sarcophage Mark-IV de Nailer et fente 3 mm — puis armure d’abordage Maglite Faraday et une seconde que tu peux geler. Deux doctrines de combinaison ; les caméras ne se fusionnent jamais. Le roman est le dossier ; Deck Zero est le jeu."
   },
   "chapters": [
     {
@@ -527,15 +527,16 @@
       "id": "afterword-deck-zero",
       "number": "AFTERWORD",
       "title": "SAME CORPORATION",
-      "subtitle": "A note for readers who want the next surface",
+      "subtitle": "A note for readers who want what comes after",
       "telemetryHeader": "EDITORIAL · NOT DIEGETIC",
       "estimatedReadTime": "2 min",
-      "wordCount": 280,
+      "wordCount": 320,
       "paragraphs": [
         "You have just finished a closed personal tragedy. Paul Reyes / Stray-744 does not return.",
         "What remains open is the industrial sky that made him: Vurtek as predator infrastructure, emission as hazard, silence that is not mercy.",
-        "This novella sits earlier in that sky — sealed iron, three millimeters of quartz, debt amortized like ore. Later, contractors board under a different suit doctrine: Faraday kits, Maglite as the only honest light, a second you can freeze long enough to think.",
-        "That later surface is called Deck Zero. It is a playable boarding product, not a sequel chapter of this book. You do not need Chrono to understand Nailer. You do not need Nailer to board Cairn-9.",
+        "This novella sits earlier in that sky. Nailer’s Mark-IV is a sealed-iron sarcophagus — three tons of zinc-primed cast iron, Faraday mesh welded shut, a three-millimeter Slot for the physical eye, and camera nodules only when the ego is parked elsewhere. That is the suit doctrine of the Stray harvest war.",
+        "Later, contractors board under a different costume of the same corporation: Maglite Faraday boarding armor — temple Presence, fiber tethers, Maglite as the only honest light, a second you can freeze long enough to think. Same predator. Same emission dread. Different era. The cameras never merge.",
+        "That later play is called Deck Zero. It is a playable boarding product, not a sequel chapter of this book. You do not need Chrono to understand Nailer. You do not need Nailer to board Cairn-9.",
         "If the case left a heat in your hands, the wake dossier is here:",
         "https://zeubi403-jpg.github.io/deck-zero/",
         "Same corporation. Earlier war in sealed iron — then Maglite boarding and a second you can freeze. The novel is the case. Deck Zero is the play."

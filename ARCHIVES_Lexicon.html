@@ -31,6 +31,7 @@ h1{font-family:var(--mono);font-size:clamp(1.2rem,3vw,1.7rem);color:var(--title)
 <header class="chrome">
   <a href="ARCHIVES_Silent_Running.html"><span data-lang="en">← Novel</span><span data-lang="fr">← Roman</span></a>
   <div style="display:flex;gap:.25rem;align-items:center">
+    <button type="button" data-audio-mute aria-pressed="false">AUD</button>
     <button type="button" id="langEn" class="on">EN</button>
     <button type="button" id="langFr">FR</button>
     <div data-dz-site-menu></div>
@@ -38,19 +39,27 @@ h1{font-family:var(--mono);font-size:clamp(1.2rem,3vw,1.7rem);color:var(--title)
 </header>
 <h1 id="title"></h1>
 <p class="lead" id="intro"></p>
+<p class="foot" style="margin:0 0 1rem;opacity:.85" data-lang="en">Optional theorist map — not required to enjoy the novel or the Brief.</p>
+<p class="foot" style="margin:0 0 1rem;opacity:.85" data-lang="fr">Carte théoricienne optionnelle — pas requise pour le roman ni le Brief.</p>
 <div id="cards"></div>
-<p class="foot"><a href="ARCHIVES_Silent_Running.html">Begin / resume Silent Running</a> · <a href="ARCHIVES_Gaze.html">Displaced Gaze</a> · <a href="DECK_ZERO_Pitch.html">Boarding dossier</a></p>
+<p class="foot"><a href="ARCHIVES_Silent_Running.html">Begin / resume Silent Running</a> · <a href="ARCHIVES_Gaze.html">Displaced Gaze</a> · <a href="DECK_ZERO_Pitch.html">Boarding dossier</a> · <a href="index.html">Home</a></p>
+<script src="dz-terminal.js"></script>
 <script>
 (function(){
   function setLang(l){
     document.documentElement.lang=l;
-    try{localStorage.setItem("dz_lang",l)}catch(_){}
+    try{localStorage.setItem("dz_lang",l);localStorage.setItem("dz-lang",l)}catch(_){}
     document.getElementById("langEn").classList.toggle("on",l==="en");
     document.getElementById("langFr").classList.toggle("on",l==="fr");
+    if(window.DZ&&DZ.syncLabels)DZ.syncLabels();
   }
   document.getElementById("langEn").onclick=()=>setLang("en");
   document.getElementById("langFr").onclick=()=>setLang("fr");
-  try{setLang(new URLSearchParams(location.search).get("lang")==="fr"||localStorage.getItem("dz_lang")==="fr"?"fr":"en")}catch(_){setLang("en")}
+  try{
+    const q=new URLSearchParams(location.search).get("lang");
+    const s=localStorage.getItem("dz_lang")||localStorage.getItem("dz-lang");
+    setLang(q==="fr"||q==="en"?q:(s==="fr"?"fr":"en"));
+  }catch(_){setLang("en")}
   fetch("media/archives/lexicon.json").then(r=>r.json()).then(j=>{
     const fr=document.documentElement.lang==="fr";
     document.getElementById("title").textContent=fr?j.title_fr:j.title_en;

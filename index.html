@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Deck Zero</title>
-<meta name="description" content="Deck Zero — 2118 Ashen-Null optical dossier. Cairn-9 burned reverse with no orders on file. Fiber only. Maglite.">
+<meta name="description" content="Deck Zero — one franchise: Silent Running (hard sci-fi novella) then Maglite Chrono boarding play. Ashen-Null optical terminal.">
 <meta name="theme-color" content="#020805">
 <meta name="color-scheme" content="dark">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
-<meta property="og:title" content="Deck Zero · Optical dossier">
-<meta property="og:description" content="Cairn-9 burned reverse with no orders on file. Hull still warm. Optical recovery under Faraday seal — a silence that was never empty.">
+<meta property="og:title" content="Deck Zero · Novel + Maglite Chrono">
+<meta property="og:description" content="Same corporation. Earlier war in sealed iron — then Maglite boarding. Read Silent Running, or open the 2118 Cairn-9 Brief.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="og.png">
 <meta property="og:site_name" content="Deck Zero">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Deck Zero · Optical dossier">
-<meta name="twitter:description" content="Cairn-9 burned reverse with no orders on file. Hull still warm. Optical recovery under Faraday seal — a silence that was never empty.">
+<meta name="twitter:title" content="Deck Zero · Novel + Maglite Chrono">
+<meta name="twitter:description" content="Same corporation. Earlier war in sealed iron — then Maglite boarding. Read Silent Running, or open the 2118 Cairn-9 Brief.">
 <meta name="twitter:image" content="og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -592,31 +592,63 @@ body.optics-lo .quote{animation:none!important}
   font-size:1.14rem;line-height:1.55;color:#d0e8da;font-style:italic;
   margin:0 0 2.2rem;padding-left:1rem;border-left:2px solid var(--phos);max-width:34rem;
 }
-.cta .label{animation:phos-idle 5.5s ease-in-out infinite}
 .quote cite{
   display:block;margin-top:.65rem;font-style:normal;font-family:var(--mono);
   font-size:.68rem;letter-spacing:.06em;color:var(--phos);text-transform:uppercase;
 }
-.cta{
-  margin-top:auto;display:block;text-decoration:none;padding:1.25rem 1.3rem;
+.gate a .k{animation:phos-idle 5.5s ease-in-out infinite}
+.lead{
+  font-size:clamp(1.05rem,2.6vw,1.22rem);line-height:1.55;color:#d8eee3;
+  margin:0 0 1rem;max-width:34rem;
+}
+.era{
+  display:grid;gap:.45rem;margin:0 0 1.35rem;max-width:34rem;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--phos-dim);border:1px solid var(--line);padding:.65rem .75rem;
+  background:rgba(4,14,10,.5);
+}
+.era b{color:var(--phos);font-weight:500}
+.era .arrow{color:var(--faint)}
+.gate{
+  display:grid;gap:.75rem;margin:0 0 1.5rem;max-width:36rem;
+}
+.gate a{
+  display:block;text-decoration:none;padding:1.15rem 1.2rem;
   border:1px solid rgba(77,255,154,.4);background:var(--phos-glow);
   box-shadow:0 0 28px rgba(77,255,154,.08);
-  transition:background .15s, border-color .15s, transform .15s, box-shadow .15s;
-  position:relative;z-index:2;
+  transition:background .15s,border-color .15s,transform .15s,box-shadow .15s;
+  position:relative;z-index:2;min-height:44px;
 }
-.cta:hover{
+.gate a:hover{
   background:rgba(77,255,154,.18);border-color:var(--phos);transform:translateY(-1px);
   box-shadow:0 0 36px rgba(77,255,154,.18);
 }
-.cta .label{font-family:var(--mono);font-weight:500;font-size:1.05rem;color:var(--phos);letter-spacing:.08em;text-transform:uppercase}
-.cta .desc{margin-top:.35rem;color:var(--muted);font-size:1.02rem;line-height:1.45}
-.cta .how{
-  margin-top:.7rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;
-  text-transform:uppercase;color:var(--phos-dim);
+.gate a .k{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--phos);margin-bottom:.35rem;
 }
-.alt{margin-top:.9rem;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
-.alt a{color:var(--muted);text-decoration:none}
-.alt a:hover{color:var(--phos)}
+.gate a .t{
+  font-family:var(--mono);font-weight:500;font-size:1.08rem;letter-spacing:.04em;
+  text-transform:uppercase;color:var(--title);margin-bottom:.3rem;
+}
+.gate a .d{color:var(--muted);font-size:1rem;line-height:1.45}
+.gate a.read{
+  border-color:rgba(77,255,154,.55);background:rgba(77,255,154,.14);
+}
+.secondary{
+  display:flex;flex-wrap:wrap;gap:.55rem .9rem;margin:0 0 1.25rem;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+}
+.secondary a{color:var(--muted);text-decoration:none;min-height:36px;display:inline-flex;align-items:center}
+.secondary a:hover{color:var(--phos)}
+.boot-brand{
+  font-family:var(--mono);font-size:clamp(1.4rem,5vw,2rem);letter-spacing:.08em;
+  text-transform:uppercase;color:var(--title);margin-bottom:.35rem;
+}
+.boot-sub{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--phos-dim);margin-bottom:1rem;
+}
 /* Cold boot — once; Eject must not replay */
 .boot{
   position:fixed;inset:0;z-index:80;background:#010403;
@@ -679,10 +711,13 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
 <div class="bezel" aria-hidden="true"></div>
 <div class="boot" id="boot" aria-live="polite">
   <div class="boot-inner">
+    <div class="boot-brand">Deck Zero</div>
+    <div class="boot-sub" data-lang="en">Ashen-Null · optical channel · novel + Maglite Brief</div>
+    <div class="boot-sub" data-lang="fr">Ashen-Null · canal optique · roman + Brief Maglite</div>
     <div class="boot-lines" id="bootLines"></div>
     <button type="button" class="boot-skip" id="bootSkip">
-      <span data-lang="en">Continue</span>
-      <span data-lang="fr">Continuer</span>
+      <span data-lang="en">Enter the glass</span>
+      <span data-lang="fr">Entrer dans le verre</span>
     </button>
   </div>
 </div>
@@ -718,13 +753,43 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
   <div class="clearance" data-lang="fr">Joint Faraday · lien fibre · pas de RF</div>
   <div class="year">2118</div>
   <h1 class="brand">Deck Zero</h1>
-  <div class="stamp" data-lang="en">Ashen-Null · cleared dossier copy</div>
-  <div class="stamp" data-lang="fr">Ashen-Null · exemplaire de dossier autorisé</div>
+  <div class="stamp" data-lang="en">Ashen-Null · optical terminal</div>
+  <div class="stamp" data-lang="fr">Ashen-Null · terminal optique</div>
+
+  <p class="lead" data-lang="en">One franchise. A hard sci-fi novella — then Maglite Chrono boarding play. Same corporation. Two eras. One silence that was never empty.</p>
+  <p class="lead" data-lang="fr">Une franchise. Une novella hard sci-fi — puis l’abordage Maglite Chrono. Même corporation. Deux ères. Un silence qui n’a jamais été vide.</p>
 
   <p class="hook" data-lang="en">Cairn-9 burns reverse. No flight plan. No distress. Hull still warm.</p>
   <p class="hook" data-lang="fr">Cairn-9 brûle en rétro. Pas de plan de vol. Pas de détresse. Coque encore chaude.</p>
-  <p class="hook capsule" data-lang="en">Hold the second to read the board. Release it and only the Maglite is honest — and honesty is a signature. What waits does not answer as a mind answers.</p>
-  <p class="hook capsule" data-lang="fr">Tenez la seconde pour lire le tableau. Relâchez-la : seule la Maglite est honnête — et l’honnêteté est une signature. Ce qui attend ne répond pas comme répond un esprit.</p>
+
+  <div class="era" data-lang="en">
+    <div><b>Earlier</b> · <i>The Silent Running</i> — sealed-iron harvest case (novella). Nailer’s Mark-IV: three-ton iron sarcophagus, 3mm Slot — doctrine suit of that war.</div>
+    <div class="arrow">↓ same corporation · Vurtek · suit law changes</div>
+    <div><b>Later</b> · Deck Zero — Maglite Faraday boarding armor · Chrono · Cairn-9 Brief (play). Same predator corp; different era costume. Cameras never merge.</div>
+  </div>
+  <div class="era" data-lang="fr">
+    <div><b>Plus tôt</b> · <i>The Silent Running</i> — dossier fer scellé (novella). Mark-IV de Nailer : sarcophage de fer, fente 3 mm — combinaison de cette guerre.</div>
+    <div class="arrow">↓ même corporation · Vurtek · la loi des combinaisons change</div>
+    <div><b>Plus tard</b> · Deck Zero — armure d’abordage Maglite Faraday · Chrono · Brief Cairn-9 (jeu). Même prédateur ; autre costume d’ère. Les caméras ne se fusionnent jamais.</div>
+  </div>
+
+  <nav class="gate" aria-label="Primary paths">
+    <a class="read" id="gateNovel" href="ARCHIVES_Silent_Running.html">
+      <div class="k" data-lang="en">1 · Read</div>
+      <div class="k" data-lang="fr">1 · Lire</div>
+      <div class="t">The Silent Running</div>
+      <div class="d" data-lang="en">Full hard sci-fi novella. Sealed-iron prequel — the case before Maglite boarding. Start here for the story.</div>
+      <div class="d" data-lang="fr">Novella hard sci-fi complète. Préquelle fer scellé — le dossier avant l’abordage Maglite. Commencez ici pour l’histoire.</div>
+    </a>
+    <a class="play" id="gateBrief" href="DECK_ZERO_Pitch.html">
+      <div class="k" data-lang="en">2 · Play Brief</div>
+      <div class="k" data-lang="fr">2 · Brief jeu</div>
+      <div class="t" data-lang="en">Open Cairn-9 dossier</div>
+      <div class="t" data-lang="fr">Ouvrir le dossier Cairn-9</div>
+      <div class="d" data-lang="en">Maglite · Chrono · Corpse-Sky. The boarding Brief for the playable game — you do not need the novel to open Cairn-9.</div>
+      <div class="d" data-lang="fr">Maglite · Chrono · Ciel-Cadavre. Le Brief d’abordage pour le jeu — le roman n’est pas requis pour ouvrir Cairn-9.</div>
+    </a>
+  </nav>
 
   <blockquote class="quote" data-lang="en">
     If nothing presents itself in the infinite void, it is because everything out there is already dead.
@@ -735,22 +800,26 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
     <cite>Cdt Ilya Rostova · Ashen-Null · 2093</cite>
   </blockquote>
 
+  <p class="hook capsule" data-lang="en">In play: freeze the second to read the board; release it and only the Maglite stays honest — and honesty is a signature. What waits does not answer as a mind answers.</p>
+  <p class="hook capsule" data-lang="fr">En jeu : gélez la seconde pour lire le tableau ; relâchez — seule la Maglite reste honnête, et l’honnêteté est une signature. Ce qui attend ne répond pas comme un esprit.</p>
+
   <div class="resume" id="resumeStrip" hidden>
-    <span data-lang="en">Prior session on this glass</span>
-    <span data-lang="fr">Session antérieure sur ce verre</span>
-    <strong id="resumeRead">READ 0 / 10</strong>
+    <span data-lang="en">Resume on this glass</span>
+    <span data-lang="fr">Reprendre sur ce verre</span>
+    <strong id="resumeRead"></strong>
   </div>
 
-  <p class="clearance" style="margin-top:1.1rem" data-lang="en">Choose a surface · Menu (top right) always available</p>
-  <p class="clearance" style="margin-top:1.1rem" data-lang="fr">Choisissez une surface · Menu (en haut à droite) toujours dispo</p>
-  <div data-dz-site-hub></div>
+  <nav class="secondary" aria-label="More">
+    <a id="secGaze" href="ARCHIVES_Gaze.html" data-lang="en">Feel Ch.01 · Displaced Gaze (optional)</a>
+    <a id="secGazeFr" href="ARCHIVES_Gaze.html" data-lang="fr">Sentir Ch.01 · Regard déplacé (optionnel)</a>
+    <a id="secLex" href="ARCHIVES_Lexicon.html" data-lang="en">Hard-SF lexicon (optional)</a>
+    <a id="secLexFr" href="ARCHIVES_Lexicon.html" data-lang="fr">Lexique hard-SF (optionnel)</a>
+    <a id="century" href="DECK_ZERO_Pitch.html#9" data-lang="en">Optional century timeline</a>
+    <a id="century-fr" href="DECK_ZERO_Pitch.html#9" data-lang="fr">Chronologie du siècle (optionnel)</a>
+  </nav>
 
-  <p class="alt">
-    <a id="century" href="DECK_ZERO_Pitch.html#9" data-lang="en">Century appendix →</a>
-    <a id="century-fr" href="DECK_ZERO_Pitch.html#9" data-lang="fr">Annexe du siècle →</a>
-  </p>
-  <p class="foot-clear" data-lang="en">Ashen-Null optical channel · fiber only · not a public network</p>
-  <p class="foot-clear" data-lang="fr">Canal optique Ashen-Null · fibre seule · pas un réseau public</p>
+  <p class="foot-clear" data-lang="en">Ashen-Null optical channel · fiber only · Menu (top right) for whole site · not a public network</p>
+  <p class="foot-clear" data-lang="fr">Canal optique Ashen-Null · fibre seule · Menu (haut droite) pour tout le site · pas un réseau public</p>
 </main>
 <script src="dz-terminal.js"></script>
 <script src="dz-site-menu.js"></script>
@@ -762,38 +831,70 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
   const linkStatus = document.getElementById("linkStatus");
   const termClock = document.getElementById("termClock");
 
+  function readLangStore() {
+    try {
+      const a = localStorage.getItem("dz_lang") || localStorage.getItem("dz-lang");
+      if (a === "fr" || a === "en") return a;
+    } catch (_) {}
+    return null;
+  }
+  function writeLangStore(lang) {
+    try {
+      localStorage.setItem("dz_lang", lang);
+      localStorage.setItem("dz-lang", lang);
+    } catch (_) {}
+  }
+
   function detect() {
     const q = new URLSearchParams(location.search).get("lang");
     if (q === "fr" || q === "en") return q;
-    try {
-      const s = localStorage.getItem("dz-lang");
-      if (s === "fr" || s === "en") return s;
-    } catch (_) {}
+    const s = readLangStore();
+    if (s) return s;
     return (navigator.language || "").toLowerCase().startsWith("fr") ? "fr" : "en";
   }
 
   function setLang(lang) {
     lang = lang === "fr" ? "fr" : "en";
     document.documentElement.lang = lang;
-    document.title = lang === "fr" ? "Deck Zero · Dossier optique" : "Deck Zero · Optical dossier";
+    document.title = lang === "fr" ? "Deck Zero · Roman + Maglite" : "Deck Zero · Novel + Maglite Chrono";
     btns.forEach((b) => b.classList.toggle("on", b.dataset.setLang === lang));
-    century.href = "DECK_ZERO_Pitch.html?lang=" + lang + "#9";
-    centuryFr.href = "DECK_ZERO_Pitch.html?lang=" + lang + "#9";
-    try { localStorage.setItem("dz-lang", lang); } catch (_) {}
-    document.querySelectorAll("[data-dz-site-hub],[data-dz-site-menu]").forEach((el) => {
-      el.dataset.dzMounted = "0";
-      el.innerHTML = "";
-      el.classList.remove("dz-hub", "dz-site-menu", "open");
+    const q = "?lang=" + lang;
+    ["gateNovel", "gateBrief", "secGaze", "secGazeFr", "secLex", "secLexFr"].forEach(function (id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const base = el.getAttribute("href").split("?")[0].split("#")[0];
+      const hash = (el.getAttribute("href").split("#")[1] || "");
+      el.href = base + q + (hash ? "#" + hash : "");
     });
-    if (window.DZSiteMenu && window.DZSiteMenu.boot) window.DZSiteMenu.boot();
+    if (century) century.href = "DECK_ZERO_Pitch.html" + q + "#9";
+    if (centuryFr) centuryFr.href = "DECK_ZERO_Pitch.html" + q + "#9";
+    writeLangStore(lang);
+    if (window.DZSiteMenu && window.DZSiteMenu.boot) {
+      document.querySelectorAll("[data-dz-site-menu]").forEach((el) => {
+        el.dataset.dzMounted = "0";
+        el.innerHTML = "";
+        el.classList.remove("dz-site-menu", "open");
+      });
+      window.DZSiteMenu.boot();
+    }
     if (window.DZ && typeof DZ.syncLabels === "function") DZ.syncLabels();
     const resume = document.getElementById("resumeStrip");
     const resumeRead = document.getElementById("resumeRead");
-    if (resume && resumeRead && window.DZ && typeof DZ.seenCount === "function") {
-      const n = DZ.seenCount();
-      if (n > 0) {
+    if (resume && resumeRead) {
+      let bits = [];
+      try {
+        const ch = localStorage.getItem("sr_chapter");
+        if (ch !== null && ch !== "") {
+          bits.push(lang === "fr" ? "Roman ch. " + (Number(ch) + 1) : "Novel ch. " + (Number(ch) + 1));
+        }
+      } catch (_) {}
+      if (window.DZ && typeof DZ.seenCount === "function") {
+        const n = DZ.seenCount();
+        if (n > 0) bits.push(lang === "fr" ? "Brief " + n + "/10" : "Brief " + n + "/10");
+      }
+      if (bits.length) {
         resume.hidden = false;
-        resumeRead.textContent = "READ " + n + " / 10";
+        resumeRead.textContent = bits.join(" · ");
       } else {
         resume.hidden = true;
       }
@@ -805,6 +906,17 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
 
   btns.forEach((b) => b.addEventListener("click", () => setLang(b.dataset.setLang)));
   setLang(detect());
+
+  function sfx(name) {
+    if (window.DZ && typeof DZ[name] === "function") DZ[name]();
+  }
+  const gateNovel = document.getElementById("gateNovel");
+  const gateBrief = document.getElementById("gateBrief");
+  if (gateNovel) gateNovel.addEventListener("click", function () { sfx("playPneumaticHiss"); });
+  if (gateBrief) gateBrief.addEventListener("click", function () { sfx("playBootClack"); });
+  document.querySelectorAll(".secondary a").forEach(function (a) {
+    a.addEventListener("click", function () { sfx("playRelayClick"); });
+  });
 
   if (termClock) {
     const d = new Date();
@@ -858,15 +970,13 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
       "NŒUD OPTIQUE ASHEN-NULL",
       "JOINT FARADAY : EN ATTENTE",
       "LIEN : FIBRE / PAS DE RF",
-      "RELECTURE DOSSIER AUTORISÉ — 2118",
-      "HORLOGE : LIVE",
+      "FRANCHISE : ROMAN → MAGLITE",
       "SESSION OUVERTE"
     ] : [
       "ASHEN-NULL OPTICAL NODE",
       "FARADAY SEAL: HOLD",
       "LINK: FIBER / NO RF",
-      "REPLAYING CLEARED DOSSIER — 2118",
-      "CLOCK: LIVE",
+      "FRANCHISE: NOVEL → MAGLITE",
       "SESSION OPEN"
     ];
     let n = 0;
@@ -883,9 +993,9 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
         linesEl.appendChild(row);
         if (window.DZ && typeof DZ.beepBoot === "function") DZ.beepBoot();
         n++;
-        setTimeout(step, 380 + Math.random() * 160);
+        setTimeout(step, 320 + Math.random() * 120);
       } else {
-        setTimeout(finish, 550);
+        setTimeout(finish, 420);
       }
     }
     step();

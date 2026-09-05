@@ -156,8 +156,8 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
           <button type="button" id="btnBeginFr" data-lang="fr">Ouvrir le dossier</button>
           <button type="button" class="ghost" id="btnResume" style="display:none" data-lang="en">Resume reading</button>
           <button type="button" class="ghost" id="btnResumeFr" style="display:none" data-lang="fr">Reprendre</button>
-          <a class="ghost" href="ARCHIVES_Gaze.html" data-lang="en">Displaced Gaze (feel the cut)</a>
-          <a class="ghost" href="ARCHIVES_Gaze.html" data-lang="fr">Regard déplacé (sentir la coupe)</a>
+          <a class="ghost" href="ARCHIVES_Gaze.html" data-lang="en">Feel Ch.01 · Displaced Gaze (optional)</a>
+          <a class="ghost" href="ARCHIVES_Gaze.html" data-lang="fr">Sentir Ch.01 · Regard déplacé (optionnel)</a>
           <a class="ghost" href="ARCHIVES_Lexicon.html" data-lang="en">Hard-SF lexicon (optional)</a>
           <a class="ghost" href="ARCHIVES_Lexicon.html?lang=fr" data-lang="fr">Lexique hard-SF (optionnel)</a>
           <a class="ghost" href="media/archives/THE_SILENT_RUNNING.md" download data-lang="en">Download manuscript (.md)</a>
@@ -177,8 +177,8 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
     <div class="kicker" data-lang="fr">Sommaire · dossier fer scellé</div>
     <h1 data-lang="en">Chapters</h1>
     <h1 data-lang="fr">Chapitres</h1>
-    <p class="pitch" data-lang="en">Read in order. Each entry opens on the optical glass — hold to crush, AUD for hum, LO to dim the tube.</p>
-    <p class="pitch" data-lang="fr">Lisez dans l’ordre. Chaque entrée s’ouvre sur le verre optique — maintenir pour écraser, AUD pour le ronron, LO pour atténuer le tube.</p>
+    <p class="pitch" data-lang="en">Read in order. Each chapter opens on this optical glass. AUD starts the reactor hum; LO dims the tube. Hold the glass to crush phosphor (optional).</p>
+    <p class="pitch" data-lang="fr">Lisez dans l’ordre. Chaque chapitre s’ouvre sur ce verre optique. AUD lance le ronron réacteur ; LO atténue le tube. Maintenez pour écraser le phosphore (optionnel).</p>
     <div class="toc" id="toc"></div>
   </section>
 
@@ -218,7 +218,10 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
   }
   function setLang(l) {
     document.documentElement.lang = l;
-    try { localStorage.setItem("dz_lang", l); } catch (_) {}
+    try {
+      localStorage.setItem("dz_lang", l);
+      localStorage.setItem("dz-lang", l);
+    } catch (_) {}
     document.getElementById("langEn").classList.toggle("on", l === "en");
     document.getElementById("langFr").classList.toggle("on", l === "fr");
     applyMeta();
@@ -228,7 +231,8 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
   document.getElementById("langFr").onclick = () => setLang("fr");
   try {
     const q = new URLSearchParams(location.search).get("lang");
-    setLang(q === "fr" || localStorage.getItem("dz_lang") === "fr" ? "fr" : "en");
+    const stored = localStorage.getItem("dz_lang") || localStorage.getItem("dz-lang");
+    setLang(q === "fr" || q === "en" ? q : (stored === "fr" ? "fr" : "en"));
   } catch (_) { setLang("en"); }
 
   function applyMeta() {
@@ -241,12 +245,15 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
     document.getElementById("coverImg").src = "media/archives/" + data.cover;
   }
 
-  function show(m) {
+  function show(m, quiet) {
     mode = m;
     viewCover.classList.toggle("on", m === "cover");
     viewToc.classList.toggle("on", m === "toc");
     viewReader.classList.toggle("on", m === "reader");
-    if (DZ && DZ.beepSoft) DZ.beepSoft();
+    if (!quiet && DZ) {
+      if (DZ.playPneumaticHiss) DZ.playPneumaticHiss();
+      else if (DZ.beepSoft) DZ.beepSoft();
+    }
     syncDock();
     window.scrollTo(0, 0);
     document.querySelector(".stage").scrollTop = 0;
@@ -310,8 +317,11 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
       "<h2>" + escapeHtml(ch.number + " · " + ch.title) + "</h2>" +
       '<div class="sub">' + escapeHtml(ch.subtitle) + "</div>" +
       paras;
-    show("reader");
-    if (DZ && DZ.beepLog) DZ.beepLog();
+    show("reader", true);
+    if (DZ) {
+      if (DZ.playInjection) DZ.playInjection();
+      else if (DZ.beepLog) DZ.beepLog();
+    }
   }
 
   function escapeHtml(s) {

@@ -876,6 +876,7 @@ p{
       <div class="jump-menu" id="jumpMenu" role="menu" aria-label="Index">
         <div class="jump-head" data-lang="en">Knives · then appendix</div>
         <div class="jump-head" data-lang="fr">Lames · puis annexe</div>
+        <div class="jump-head" data-lang="fr">Lames · puis annexe</div>
         <button type="button" role="menuitem" data-jump="0">
           <span data-lang="en">Open</span><span data-lang="fr">Entrée</span>
           <span class="n">01</span>
@@ -907,7 +908,7 @@ p{
           <span class="n">SR</span>
         </a>
         <a role="menuitem" href="ARCHIVES_Gaze.html" style="display:flex;justify-content:space-between;padding:.55rem .7rem;color:inherit;text-decoration:none;font:inherit">
-          <span data-lang="en">Gaze</span><span data-lang="fr">Regard</span>
+          <span data-lang="en">Gaze (feel Ch.01)</span><span data-lang="fr">Regard (sentir Ch.01)</span>
           <span class="n">GZ</span>
         </a>
       </div>
@@ -1148,7 +1149,7 @@ p{
         <cite>Still spoken before every boarding · 2118</cite>
       </blockquote>
       <p class="closing">Believe the sentence long enough to stay quiet. Doubt it the moment the Maglite paints something that never needed a greeting. Cairn-9 is warm. Chrono holds analysis. The beam holds the second that still moves. What waits does not answer as minds answer — and every emission teaches it how you are built. The appendix can wait. The hatch cannot.</p>
-      <p class="closing" style="margin-top:.85rem;font-size:.92em;opacity:.88">Deep / Archives (optional prequel): Same corporation. Earlier war in sealed iron — then Maglite boarding and a second you can freeze. The novel is the case; Deck Zero is the play. — Vurtek Archives · Silent Running · not required to board.</p>
+      <p class="closing" style="margin-top:.85rem;font-size:.92em;opacity:.88">Deep / Archives (optional prequel): Same corporation. Earlier war in sealed iron — Nailer’s Mark-IV sarcophagus and the 3mm Slot — then Maglite Faraday boarding armor and a second you can freeze. Two suit doctrines, one predator sky. The novel is the case; Deck Zero is the play. — Vurtek Archives · Silent Running · not required to board.</p>
       <div class="endlinks">
         <a href="index.html">Eject</a>
         <span aria-hidden="true">·</span>
@@ -1167,7 +1168,7 @@ p{
         <cite>Toujours récitée avant chaque abordage · 2118</cite>
       </blockquote>
       <p class="closing">Croyez la phrase assez longtemps pour rester silencieux. Doutez-en dès que la Maglite peint quelque chose qui n’a jamais eu besoin d’un salut. Cairn-9 est chaude. Le Chrono tient l’analyse. Le faisceau tient la seconde qui bouge encore. Ce qui attend ne répond pas comme répondent les esprits — et chaque émission lui apprend comment vous êtes faits. L’annexe peut attendre. L’écoutille, non.</p>
-      <p class="closing" style="margin-top:.85rem;font-size:.92em;opacity:.88">Profond / Archives (préquelle optionnelle) : Même corporation. Guerre plus tôt en fer scellé — puis abordage Maglite et une seconde que tu peux geler. Le roman est le dossier ; Deck Zero est le jeu. — Archives Vurtek · Silent Running · non requis pour l’abordage.</p>
+      <p class="closing" style="margin-top:.85rem;font-size:.92em;opacity:.88">Profond / Archives (préquelle optionnelle) : Même corporation. Guerre plus tôt en fer scellé — sarcophage Mark-IV de Nailer et fente 3 mm — puis armure d’abordage Maglite Faraday et une seconde que tu peux geler. Deux doctrines de combinaison, un seul ciel prédateur. Le roman est le dossier ; Deck Zero est le jeu. — Archives Vurtek · Silent Running · non requis pour l’abordage.</p>
       <div class="endlinks">
         <a href="index.html">Éjecter</a>
         <span aria-hidden="true">·</span>
@@ -1246,7 +1247,7 @@ p{
     const q = new URLSearchParams(location.search).get("lang");
     if (q === "fr" || q === "en") return q;
     try {
-      const s = localStorage.getItem("dz-lang");
+      const s = localStorage.getItem("dz_lang") || localStorage.getItem("dz-lang");
       if (s === "fr" || s === "en") return s;
     } catch (_) {}
     return (navigator.language || "").toLowerCase().startsWith("fr") ? "fr" : "en";
@@ -1305,7 +1306,10 @@ p{
     hint.textContent = ui[lang].hint;
     if (jumpBtn) jumpBtn.setAttribute("aria-label", lang === "fr" ? "Sommaire" : "Index");
     if (window.DZ && typeof DZ.syncLabels === "function") DZ.syncLabels();
-    try { localStorage.setItem("dz-lang", lang); } catch (_) {}
+    try {
+      localStorage.setItem("dz-lang", lang);
+      localStorage.setItem("dz_lang", lang);
+    } catch (_) {}
     const url = new URL(location.href);
     url.searchParams.set("lang", lang);
     history.replaceState(null, "", url.pathname + url.search + (location.hash || ""));
