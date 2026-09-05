@@ -13,7 +13,7 @@ Debt bought the suit. The suit bought four years. Love was sold like ore.
 
 Paul Reyes signs Form 99-C so Sarah will not die in the slag pits. Four years later he is Stray-744 — a mind sealed in three tons of cast iron, cutting silent ships in Jupiter’s radiation skirt. What waits does not hate. It solves for silence.
 
-Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, an honest flashlight, a second you can hold still. Cairn-9 opens under an Ashen-Null contract on a Vurtek salvage charter — Keel-Nadir may contest the claim; Slag-Cord may already be stripping the warm hull. Open the dossier when you want that war.
+Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, an honest flashlight, a second you can hold still. Paul does not return — but Vurtek recovers Ego-Locks as Parked Assets with the armor. Cairn-9: Ashen-Null under a Vurtek salvage charter; peers may contest, or already be aboard. Open the dossier when you want that industrial wound.
 
 ---
 
@@ -914,9 +914,11 @@ You have just finished a closed personal tragedy. Paul Reyes / Stray-744 does no
 
 What remains open is the industrial sky that made him: Vurtek as predator infrastructure, emission as hazard, silence that is not mercy.
 
+Vurtek recovers more than iron. When a Stray dies with the Gaze parked, a lossy **Ego-Lock** may remain in the suit’s telemetry — a Parked Asset under the same ledger family as Form 99-C. The person does not return. The property might. Deck Zero can open that industrial wound; it does not give Nailer a second life.
+
 Nailer’s Mark-IV was sealed iron — three tons of zinc-primed cast, Faraday mesh welded shut, three millimeters of physical eye, and camera nodules only when the ego was parked elsewhere. That was his war.
 
-Later, under the same corporation, contractors board warm hulls with fiber tethers and a flashlight they treat as the only honest light. Hold the second still and the board can be read. Release it and honesty paints you.
+Later, under the same corporation, contractors board warm hulls with fiber tethers and a flashlight they treat as the only honest light. Hold the second still and the board can be read. Release it and honesty paints you. Ashen-Null forbids parking the Gaze on contract — helmet stays meat-side — so the living do not become recoverables.
 
 That later work is called Deck Zero. Cairn-9 is warm. The dossier is open.
 
