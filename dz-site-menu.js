@@ -103,7 +103,7 @@
       a.textContent = L.label;
       a.setAttribute("role", "menuitem");
       a.addEventListener("click", function () {
-        sfx("playPneumaticHiss");
+        sfx("beepSoft");
       });
       panel.appendChild(a);
     });
@@ -112,7 +112,7 @@
       var open = !host.classList.contains("open");
       host.classList.toggle("open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
-      if (open) sfx("playRelayClick");
+      if (open) sfx("beepSoft");
     });
     document.addEventListener("click", function () {
       host.classList.remove("open");
@@ -177,7 +177,7 @@
         it.d +
         "</div>";
       a.addEventListener("click", function () {
-        sfx(it.href.indexOf("Gaze") >= 0 ? "playGazeCut" : "playPneumaticHiss");
+        sfx(it.href.indexOf("Gaze") >= 0 ? "playGazeCut" : "beepSoft");
       });
       host.appendChild(a);
     });

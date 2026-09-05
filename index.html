@@ -933,10 +933,15 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
   }
   const gateNovel = document.getElementById("gateNovel");
   const gateBrief = document.getElementById("gateBrief");
-  if (gateNovel) gateNovel.addEventListener("click", function () { sfx("playPneumaticHiss"); });
-  if (gateBrief) gateBrief.addEventListener("click", function () { sfx("playBootClack"); });
+  const gateLook = document.getElementById("gateLook");
+  if (gateNovel) gateNovel.addEventListener("click", function () { sfx("beepLog"); });
+  if (gateBrief) gateBrief.addEventListener("click", function () { sfx("beepSoft"); });
+  if (gateLook) gateLook.addEventListener("click", function () { sfx("beepSoft"); });
   document.querySelectorAll(".secondary a").forEach(function (a) {
-    a.addEventListener("click", function () { sfx("playRelayClick"); });
+    a.addEventListener("click", function () { sfx("beepSoft"); });
+  });
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { sfx("beepSoft"); });
   });
 
   if (termClock) {
@@ -1197,7 +1202,9 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
       if (hard) {
         leaveSpark(px, py, true);
         punch = Math.max(punch, 1.2);
-        if (window.DZ && typeof DZ.forceHashLink === "function" && Math.random() < 0.55) {
+        if (window.DZ && typeof DZ.playCrushGlass === "function") DZ.playCrushGlass();
+        else if (window.DZ && typeof DZ.beepSoft === "function") DZ.beepSoft();
+        if (window.DZ && typeof DZ.forceHashLink === "function" && Math.random() < 0.28) {
           DZ.forceHashLink(780);
         }
         if (now - lastKick > 180) {

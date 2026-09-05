@@ -1742,7 +1742,9 @@ p{
       if (hard) {
         leaveSpark(px, py, true);
         punch = Math.max(punch, 1.2);
-        if (window.DZ && typeof DZ.forceHashLink === "function" && Math.random() < 0.55) {
+        if (window.DZ && typeof DZ.playCrushGlass === "function") DZ.playCrushGlass();
+        else if (window.DZ && typeof DZ.beepSoft === "function") DZ.beepSoft();
+        if (window.DZ && typeof DZ.forceHashLink === "function" && Math.random() < 0.28) {
           DZ.forceHashLink(780);
         }
         if (now - lastKick > 180) {

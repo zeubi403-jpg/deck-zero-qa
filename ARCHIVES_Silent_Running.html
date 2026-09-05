@@ -356,16 +356,26 @@ h1{font-family:var(--mono);font-weight:500;font-size:clamp(1.4rem,3.8vw,2.1rem);
   // Optical glass crush (Ashen-Null language — keep interactions)
   (function crush() {
     const ring = document.getElementById("crushRing");
+    if (!ring) return;
     let pressing = false;
+    let lastSfx = 0;
     function at(x, y, on) {
       ring.style.left = x + "px";
       ring.style.top = y + "px";
       ring.classList.toggle("on", !!on);
     }
+    function tickSfx() {
+      const now = performance.now();
+      if (now - lastSfx < 160) return;
+      lastSfx = now;
+      if (window.DZ && typeof DZ.playCrushGlass === "function") DZ.playCrushGlass();
+      else if (window.DZ && typeof DZ.beepSoft === "function") DZ.beepSoft();
+    }
     window.addEventListener("pointerdown", (e) => {
       if (e.pointerType === "touch") return;
       pressing = true;
       at(e.clientX, e.clientY, true);
+      tickSfx();
     }, { passive: true });
     window.addEventListener("pointermove", (e) => {
       if (!pressing) return;
