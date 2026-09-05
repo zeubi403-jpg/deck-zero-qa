@@ -144,8 +144,8 @@
         k: fr ? "Dossier · Cairn-9" : "Dossier · Cairn-9",
         t: fr ? "Ouvrir Cairn-9" : "Open Cairn-9",
         d: fr
-          ? "Coque chaude. Lumière honnête. Une seconde qu’on peut tenir."
-          : "Warm hull. Honest light. A second you can hold still."
+          ? "Coque chaude. Une lampe qu’ils croient. Une seconde pour penser."
+          : "Warm hull. A flashlight they trust. A second to think."
       },
       {
         href: "ARCHIVES_Gaze.html",
