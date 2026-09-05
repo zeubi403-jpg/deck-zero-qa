@@ -6,7 +6,7 @@
 <title>Deck Zero · Century spine</title>
 <meta name="description" content="Century spine inside the Cairn-9 dossier — open after the knives, not as the front door.">
 <meta property="og:title" content="Deck Zero · Century spine">
-<meta property="og:description" content="Century spine inside the Ashen-Null optical dossier. Knives first.">
+<meta property="og:description" content="Century spine inside the Cairn-9 dossier — after the knives, not before.">
 <meta name="theme-color" content="#020805">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -32,12 +32,12 @@ a.primary,button.primary{background:var(--phos);color:var(--void);border-color:v
   <h1 data-lang-switch>Century spine</h1>
   <p data-lang-switch-p>This is the long historical section inside the Cairn-9 dossier — not the front door. Start with the novel or the warm-hull knives if you have not yet.</p>
   <div class="row">
-    <a class="primary" id="go" href="DECK_ZERO_Pitch.html#9">Open timeline in Brief</a>
+    <a class="primary" id="go" href="DECK_ZERO_Pitch.html#9">Open century spine in dossier</a>
     <a href="index.html" id="home">Home</a>
     <a href="ARCHIVES_Silent_Running.html" id="novel">Novel</a>
-    <a href="DECK_ZERO_Pitch.html" id="brief">Brief (start)</a>
+    <a href="DECK_ZERO_Pitch.html" id="brief">Dossier (start)</a>
   </div>
-  <div class="muted">Faraday seal · fiber only · no RF</div>
+  <div class="muted">Cable only · no open radio</div>
 <script src="dz-terminal.js"></script>
 <script>
 (function () {
@@ -70,7 +70,12 @@ a.primary,button.primary{background:var(--phos);color:var(--void);border-color:v
       : "This is the long historical section inside the Cairn-9 dossier — not the front door. Start with the novel or the warm-hull knives if you have not yet.";
   }
   document.title = lang === "fr" ? "Deck Zero · Axe du siècle" : "Deck Zero · Century spine";
-  go.textContent = lang === "fr" ? "Ouvrir l’axe dans le dossier" : "Open spine in dossier";
+  if (go) go.textContent = lang === "fr" ? "Ouvrir l’axe dans le dossier" : "Open century spine in dossier";
+  if (brief) brief.textContent = lang === "fr" ? "Dossier (début)" : "Dossier (start)";
+  if (home) home.textContent = lang === "fr" ? "Accueil" : "Home";
+  if (novel) novel.textContent = lang === "fr" ? "Roman" : "Novel";
+  var muted = document.querySelector(".muted");
+  if (muted) muted.textContent = lang === "fr" ? "Câble seul · aucune radio ouverte" : "Cable only · no open radio";
 })();
 </script>
 </body>

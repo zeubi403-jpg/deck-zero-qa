@@ -911,7 +911,7 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
       } catch (_) {}
       if (window.DZ && typeof DZ.seenCount === "function") {
         const n = DZ.seenCount();
-        if (n > 0) bits.push(lang === "fr" ? "Brief " + n + "/10" : "Brief " + n + "/10");
+        if (n > 0) bits.push(lang === "fr" ? "Dossier " + n + "/10" : "Dossier " + n + "/10");
       }
       if (bits.length) {
         resume.hidden = false;

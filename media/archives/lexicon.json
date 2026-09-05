@@ -1,38 +1,38 @@
 {
   "title_en": "Archives Lexicon — for readers who want the map",
   "title_fr": "Lexique Archives — pour ceux qui veulent la carte",
-  "intro_en": "The novella stands alone without this page. These entries name the physics and the multipolar residue already under the prose — Fermi quiet, Filter talk, Emit and Die, who else owns the dark. We do not preach Dark Forest as gospel; we show a quieter, colder engine.",
-  "intro_fr": "La novella se tient sans cette page. Ces entrées nomment la physique et le résidu multipolaire sous la prose — ciel de Fermi, Filtre, Émettre c’est mourir, qui d’autre possède le noir.",
+  "intro_en": "The story stands alone without this page. These entries name colder engines under the prose — quiet sky, why radio died, who else owns the dark, what can stick in iron when the eyes leave the head.",
+  "intro_fr": "L’histoire se tient sans cette page. Ces entrées nomment des moteurs plus froids sous la prose — ciel silencieux, pourquoi la radio est morte, qui d’autre possède le noir, ce qui peut coller au fer quand les yeux quittent la tête.",
   "entries": [
     {
       "id": "emitdie",
       "title": "World-model quiet / Emit and Die",
-      "body": "Fossil of today’s AI race, stripped of brand names. Defense pivoted to predictive world-model machines on silent local hardware. Chatty narrating agents painted kill boxes for drones and heat. What survived forecast without telling. In 2035 active wireless became operational treason — Emit and Die. Habit before Doctrine. The boarding horror is not an uprising of those machines; it is what learned to feed after Earth went quiet."
+      "body": "Fossil of a louder century, stripped of brand names. Defense learned to trust machines that forecast without speaking. Chatty agents painted kill boxes for drones and heat. In 2035 active wireless became operational treason — Emit and Die. Habit before Doctrine. What waits in the dark is not an uprising of those machines; it is what learned to feed after Earth went quiet."
     },
     {
       "id": "predictors",
       "title": "Silent predictors vs narrating machines",
-      "body": "Faraday culture hates agents that speak for you. A voice is a signature; a signature is a target. Silent predictors keep the field. Later contractors learn the same grammar under Maglite: honesty paints you. Chat is not comfort. Chat is emission."
+      "body": "A voice is a signature. A signature is a target. Faraday culture hates agents that speak for you. Silent predictors keep the field. Later contractors learn the same grammar under a flashlight: honesty paints you. Chat is not comfort. Chat is emission."
     },
     {
       "id": "multipolar",
-      "title": "Multipolar residue",
-      "body": "Not a mono-corporate sky. Vurtek Heavy Industries builds iron and amortizes lives. Ashen-Null Private Security boards under Faraday contracts and owns the Tick. Keel-Nadir Logistics moves freight and may contest salvage claims — never the alien leash. Slag-Cord Salvage strips warm hulls first and fights like humans. Cairn-9: ANPS under a Vurtek salvage charter; peers may already be arguing, or already aboard."
+      "title": "Who else owns the dark",
+      "body": "Not one company alone. Vurtek builds the iron and prices the lives. Ashen-Null sends boarding teams under Faraday rules. Keel-Nadir moves freight and argues over claims. Slag-Cord strips warm hulls first and fights like humans. On Cairn-9 the contract is Ashen-Null’s — and someone else may already be arguing, or already inside."
     },
     {
       "id": "saccadic",
       "title": "Saccadic masking / Displaced Gaze",
-      "body": "On Earth, the brain edits out the blur between eye-jumps so consciousness feels continuous. In the Mark-IV, the jump between Slot and camera nodule is not edited — you feel the cut. Displaced Gaze is the Stray technique of parking the 'I' in a CRT nodule. If the return path dies while parked, see Ego-Lock. The interactive page of that name lets you feel Chapter 01 (The Third Millimeter)."
+      "body": "On Earth, the brain edits out the blur between eye-jumps so consciousness feels continuous. In the Mark-IV, the jump between Slot and camera is not edited — you feel the cut. Displaced Gaze is parking the “I” in a camera on the suit. If the way home dies while you are parked, something of the looking can stick. Feel Chapter 01 on Displaced Gaze."
     },
     {
       "id": "egolock",
-      "title": "Ego-Lock / Parked Asset",
-      "body": "Not an upload. Not a digital heaven. When Displaced Gaze parks the ego-knot in the suit’s optical sink and power, cable, or meat fails before return, a lossy looped pattern remains in Faraday mesh and solid-state telemetry — an Ego-Lock (FR: Verrou-Ego). Vurtek recovers the armor because Form 99-C family law still names that buffer property: a Parked Asset, still amortizable. Claims Adjusters file it cold. Ashen-Null Maglite contracts forbid Gaze-parking — helmet stays meat-side — so contractors do not become recoverables. Silent Running: Paul Reyes does not return. Deck Zero Deep may later surface Asset 744 residual — incomplete, possibly delusion, never a confirmed rescue."
+      "title": "Ego-Lock — when the looking sticks",
+      "body": "Not an upload. Not a heaven. When Displaced Gaze parks the “I” in the suit and power, cable, or meat fails before return, a broken loop of looking can remain in the iron — a hum the company still knows how to bill. Vurtek comes for the armor because that hum is still property under the same ledger that wrote Form 99-C. Ashen-Null boarding contracts keep eyes in the head: leave the Gaze outside and you risk becoming something they can still collect. Paul Reyes does not return. Later work may let you touch a wrong voice in the iron — incomplete, possibly delusion, never a rescue."
     },
     {
       "id": "suits",
       "title": "Sealed iron · then honest light",
-      "body": "Nailer’s Mark-IV was sealed iron: 3mm Slot, camera nodules, Faraday mesh welded shut. Later, under the same corporation, Ashen-Null contractors board with fiber tethers and a flashlight they treat as the only honest light — Maglite as signature, Chrono as a second you can hold still. Same emission philosophy. Different war. Different eye. Maglite era forbids parking the Gaze; see Ego-Lock."
+      "body": "Nailer’s Mark-IV was sealed iron: three millimeters of real eye, cameras only when the ego was parked elsewhere, Faraday mesh welded shut. Later, under the same corporation, contractors board with a cable and a flashlight they treat as the only honest light. Same fear of emission. Different war. Different eye. On those contracts the Gaze stays home."
     },
     {
       "id": "aperiodic",
@@ -42,12 +42,12 @@
     {
       "id": "nonconscious",
       "title": "Non-conscious threat (Archaeons / Cyst-Born)",
-      "body": "Not monsters with motives. Thermodynamic maintenance: high cognitive / EM noise as carcinogen; silence as restoration. They do not hate you. You are a thermal smudge on the glass. Hard-SF cousin to Blindsight’s non-conscious supremacy — our flavor is industrial Faraday horror, not vampire linguistics."
+      "body": "Not monsters with motives. Thermodynamic maintenance: high cognitive / EM noise as carcinogen; silence as restoration. They do not hate you. You are a thermal smudge on the glass. Cousin to Blindsight’s non-conscious supremacy — industrial Faraday horror, not vampire linguistics."
     },
     {
       "id": "fermi",
       "title": "Fermi quiet / Great Filter / Dark Forest (framed)",
-      "body": "Earth theorists named the empty sky many ways: Filter (something culls loud biospheres), Dark Forest (everyone hides and shoots). Vurtek doctrine flatters those stories into strategy. The novel’s physics is colder: local Signal Audit / Filtration as equation-balancing — incomplete, covered, reconstitutable. Not a finished cosmic end-state. Deck Zero’s Corpse-Sky creed is the later incomplete cousin: silence is a morgue, not mercy."
+      "body": "Earth theorists named the empty sky many ways: Filter (something culls loud biospheres), Dark Forest (everyone hides and shoots). Vurtek doctrine flatters those stories into strategy. The colder engine under the prose is local Signal Audit / Filtration as equation-balancing — incomplete, covered, reconstitutable. Not a finished cosmic end-state. The Corpse-Sky creed spoken before boarding is the later incomplete cousin: silence is a morgue, not mercy."
     },
     {
       "id": "emission",
@@ -56,13 +56,13 @@
     },
     {
       "id": "form99",
-      "title": "Form 99-C / amortized flesh",
-      "body": "Legal reclassification of injured humans into depreciable industrial assets. The emotional engine of the novella: love vs ledger. Accessible to any reader who has ever owed something that grew teeth. The same family of law later names Ego-Locks as Parked Assets — residual buffers Vurtek still recovers with the iron."
+      "title": "Form 99-C / debt sold as flesh",
+      "body": "Legal reclassification of injured humans into industrial assets. Love versus ledger. Any reader who has ever owed something that grew teeth already knows the temperature. The same ledger later knows how to bill a hum that stuck in iron."
     },
     {
       "id": "deckzero",
       "title": "Deck Zero (later work)",
-      "body": "Cairn-9. Warm hull. Maglite as honest light. Chrono as a second you can hold still. Not a sequel chapter of Nailer’s plot — same predator corp, same emission dread, different war. The novel stands alone: Paul does not return. The dossier may later open the industrial wound of Ego-Locks without resurrecting him."
+      "body": "Cairn-9. Warm hull. A flashlight treated as honest light. A second you can hold still. Not a sequel chapter of Nailer’s plot — same predator corporation, same dread of emission, different war. The novel stands alone: Paul does not return. The dossier may later let you touch what sticks in recovered iron without giving him a second life."
     }
   ]
 }
