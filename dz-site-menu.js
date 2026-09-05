@@ -59,9 +59,9 @@
     return [
       { href: "index.html", en: "Home · Deck Zero", fr: "Accueil · Deck Zero" },
       { href: "ARCHIVES_Silent_Running.html", en: "1 · Read the novel", fr: "1 · Lire le roman" },
-      { href: "DECK_ZERO_Pitch.html", en: "2 · Open dossier (play Brief)", fr: "2 · Ouvrir le dossier (Brief)" },
-      { href: "ARCHIVES_Gaze.html", en: "3 · Feel Ch.01 · Displaced Gaze", fr: "3 · Sentir Ch.01 · Regard déplacé" },
-      { href: "ARCHIVES_Lexicon.html", en: "4 · Hard-SF lexicon", fr: "4 · Lexique hard-SF" },
+      { href: "DECK_ZERO_Pitch.html", en: "2 · Open Cairn-9 dossier", fr: "2 · Ouvrir le dossier Cairn-9" },
+      { href: "ARCHIVES_Gaze.html", en: "3 · Feel Ch.01 · three millimeters", fr: "3 · Sentir Ch.01 · trois millimètres" },
+      { href: "ARCHIVES_Lexicon.html", en: "4 · Lexicon · for the map", fr: "4 · Lexique · pour la carte" },
       {
         href: "media/archives/THE_SILENT_RUNNING.md",
         en: "Download manuscript (.md)",
@@ -136,8 +136,8 @@
         k: fr ? "Lire · Roman" : "Read · Novel",
         t: "The Silent Running",
         d: fr
-          ? "La dette a acheté la combinaison. L’amour amorti comme du minerai."
-          : "Debt bought the suit. Love amortized like ore."
+          ? "La dette a acheté la combinaison. L’amour vendu comme du minerai."
+          : "Debt bought the suit. Love sold like ore."
       },
       {
         href: "DECK_ZERO_Pitch.html",
@@ -152,16 +152,16 @@
         k: fr ? "Sentir · Regard" : "Feel · Gaze",
         t: fr ? "Regard déplacé" : "Displaced Gaze",
         d: fr
-          ? "Sentir la coupe : fente 3 mm ↔ caméra. Chapitre 01."
-          : "Feel the cut: 3mm Slot ↔ camera. Chapter 01."
+          ? "Sentir la coupe : trois millimètres d’œil — ou la caméra du fer."
+          : "Feel the cut: three millimeters of eye — or the suit’s camera."
       },
       {
         href: "ARCHIVES_Lexicon.html",
-        k: fr ? "Profond · Thèse" : "Deep · Thesis",
-        t: fr ? "Lexique hard-SF" : "Hard-SF lexicon",
+        k: fr ? "Profond · Carte" : "Deep · Map",
+        t: fr ? "Lexique" : "Lexicon",
         d: fr
-          ? "Fermi, Filtre, saccades, pavages."
-          : "Fermi, Filter, saccades, tiling."
+          ? "Pour qui veut les noms durs après la porte."
+          : "For readers who want the hard names after the door."
       }
     ];
     items.forEach(function (it) {

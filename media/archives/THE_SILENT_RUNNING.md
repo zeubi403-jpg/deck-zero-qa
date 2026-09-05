@@ -1,6 +1,6 @@
 # VURTEK ARCHIVES: THE SILENT RUNNING
 
-*A sealed-iron case from the Stray harvest — debt, three millimeters of eye, and a love amortized like ore*
+*A sealed-iron case from the Stray harvest — debt, three millimeters of eye, and a love sold like ore*
 
 **Archival Extraction // Classified Sector 4 Reclamation Directive**  
 *Archives print · English master prose*
@@ -9,11 +9,11 @@
 
 ## Reader note
 
-Debt bought the suit. The suit bought four years. Love was amortized like ore.
+Debt bought the suit. The suit bought four years. Love was sold like ore.
 
-Paul Reyes signs Form 99-C to keep Sarah out of the slag pits. Four years later he is Stray-744 — an indentured mind inside three tons of cast iron, cutting silent ships in Jupiter’s radiation skirt. What waits does not hate. It balances equations.
+Paul Reyes signs Form 99-C so Sarah will not die in the slag pits. Four years later he is Stray-744 — a mind sealed in three tons of cast iron, cutting silent ships in Jupiter’s radiation skirt. What waits does not hate. It solves for silence.
 
-Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, a flashlight that tells the truth, a second you can hold still. Open Cairn-9 when you want the warm hull.
+Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, an honest flashlight, a second you can hold still. Open Cairn-9 when you want the warm hull.
 
 ---
 
