@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Deck Zero · Century timeline</title>
-<meta name="description" content="Optional century timeline inside the boarding Brief — open after the knives, not as the front door.">
-<meta property="og:title" content="Deck Zero · Century timeline">
-<meta property="og:description" content="Optional century timeline inside the boarding Brief — Ashen-Null optical dossier. Knives first.">
+<title>Deck Zero · Century spine</title>
+<meta name="description" content="Century spine inside the Cairn-9 dossier — open after the knives, not as the front door.">
+<meta property="og:title" content="Deck Zero · Century spine">
+<meta property="og:description" content="Century spine inside the Ashen-Null optical dossier. Knives first.">
 <meta name="theme-color" content="#020805">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -28,9 +28,9 @@ a.primary,button.primary{background:var(--phos);color:var(--void);border-color:v
 </style>
 </head>
 <body>
-  <div class="kicker">Ashen-Null · optional timeline</div>
-  <h1 data-lang-switch>Century timeline</h1>
-  <p data-lang-switch-p>This is the long historical section inside the boarding Brief — not the front door. Start with the novel or the Cairn-9 dossier if you have not yet.</p>
+  <div class="kicker">Ashen-Null · century spine</div>
+  <h1 data-lang-switch>Century spine</h1>
+  <p data-lang-switch-p>This is the long historical section inside the Cairn-9 dossier — not the front door. Start with the novel or the warm-hull knives if you have not yet.</p>
   <div class="row">
     <a class="primary" id="go" href="DECK_ZERO_Pitch.html#9">Open timeline in Brief</a>
     <a href="index.html" id="home">Home</a>
@@ -61,16 +61,16 @@ a.primary,button.primary{background:var(--phos);color:var(--void);border-color:v
   home.href = "index.html" + q;
   novel.href = "ARCHIVES_Silent_Running.html" + q;
   brief.href = "DECK_ZERO_Pitch.html" + q;
-  go.textContent = lang === "fr" ? "Ouvrir la chronologie dans le Brief" : "Open timeline in Brief";
   var h = document.querySelector("[data-lang-switch]");
   var p = document.querySelector("[data-lang-switch-p]");
-  if (h) h.textContent = lang === "fr" ? "Chronologie du siècle" : "Century timeline";
+  if (h) h.textContent = lang === "fr" ? "Axe du siècle" : "Century spine";
   if (p) {
     p.textContent = lang === "fr"
-      ? "Section historique longue à l’intérieur du Brief — pas la porte d’entrée. Commencez par le roman ou le dossier Cairn-9 si vous n’y êtes pas encore."
-      : "This is the long historical section inside the boarding Brief — not the front door. Start with the novel or the Cairn-9 dossier if you have not yet.";
+      ? "Section historique longue à l’intérieur du dossier Cairn-9 — pas la porte d’entrée. Commencez par le roman ou les lames si vous n’y êtes pas encore."
+      : "This is the long historical section inside the Cairn-9 dossier — not the front door. Start with the novel or the warm-hull knives if you have not yet.";
   }
-  document.title = lang === "fr" ? "Deck Zero · Chronologie du siècle" : "Deck Zero · Century timeline";
+  document.title = lang === "fr" ? "Deck Zero · Axe du siècle" : "Deck Zero · Century spine";
+  go.textContent = lang === "fr" ? "Ouvrir l’axe dans le dossier" : "Open spine in dossier";
 })();
 </script>
 </body>

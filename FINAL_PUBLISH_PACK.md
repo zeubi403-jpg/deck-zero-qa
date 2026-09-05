@@ -1,35 +1,33 @@
 # Final publish pack — Deck Zero franchise site + Silent Running
 
-**Status:** PUBLIC FINAL (QA domain) · 2026-09-05  
+**Status:** PUBLIC FINAL · reader-voice · QA domain · 2026-09-05  
 **URL:** https://zeubi403-jpg.github.io/deck-zero-qa/  
-**Production wake (frozen):** https://zeubi403-jpg.github.io/deck-zero/
+**Production wake (frozen):** https://zeubi403-jpg.github.io/deck-zero/  
+**Law:** [`docs/FRANCHISE_VURTEK_DECK_ZERO.md`](../FRANCHISE_VURTEK_DECK_ZERO.md) PUBLIC BAN LIST
 
 ## Product map
 
 | Surface | Job |
 |---------|-----|
-| `index.html` → Pitch | Deck Zero Brief knives (viewport 1) |
-| `ARCHIVES_Silent_Running.html` | Full novella — publishable reading experience |
+| `index.html` → Pitch | Hull hook + honest light; Maglite corridor still; Brief knives |
+| `ARCHIVES_Silent_Running.html` | Full novella — debt / iron / faces |
 | `media/archives/THE_SILENT_RUNNING.md` | Downloadable manuscript |
-| `ARCHIVES_Gaze.html` | Displaced Gaze micro-immersion (unique) |
-| `ARCHIVES_Lexicon.html` | Optional theorist map |
-| Stills / cover | VurtekMain best media |
+| `ARCHIVES_Gaze.html` | Feel the three-millimeter cut from Ch.01 |
+| `ARCHIVES_Lexicon.html` | Hard-SF map (secondary) |
+| `media/look/` | Brief-path Maglite stills |
 
-## Novel final (this pass)
+## Reader-voice (this pass)
 
-- Mid-book craft preserved  
-- Ch.01 saccadic / Displaced Gaze  
-- Aperiodic braid + cyst  
-- Cutter exposition tightened to voice (less TED)  
-- Ch.03 thesis opener de-lectured  
-- Ending + Afterword literary / franchise-clean  
-- JSON + MD regenerated from manuscript.ts  
+- Public glass writes for strangers — no franchise-architecture notes  
+- Banned: Maglite boarding · cameras never merge · faces first · optional never required · novel is the case  
+- Maglite / Chrono only as earned tools after honest light / freeze the second  
+- Novel chrome = Paul / Sarah / debt; afterword = human door to Cairn-9  
 
 ## Honest ceiling
 
-“#1 NYT overnight” is not a claim. This is a **publishable edition**: coherent franchise, immersive optical experience, award-lane industrial hard SF with accessible tragedy spine. Tor-length copyedit of every paragraph remains optional Deep labor.
+Publishable optical terminal + novella edition. Tor-length line-edit of every novel paragraph remains Deep labor. Soft→Bridge F5 still gates play SIGN.
 
-## Parked (not blockers for public literary site)
+## Parked
 
 - Full FR novel  
 - Full React Gaze Simulator parity  
@@ -38,4 +36,4 @@
 
 ## Own voice
 
-Ashen-Null glass · Maglite Chrono play · sealed-iron literary prequel · Cold Iron not sold as F5 · Corpse-Sky / Filter incompleteness kinship.
+Ashen-Null glass · honest Maglite · Chrono second · sealed-iron Archives · Cold Iron not sold as F5 · incomplete Corpse-Sky.

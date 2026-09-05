@@ -1,18 +1,18 @@
 {
   "meta": {
     "title": "VURTEK ARCHIVES: THE SILENT RUNNING",
-    "subtitle": "A sealed-iron case from the Stray harvest era — literary prequel to Deck Zero Maglite boarding",
+    "subtitle": "A sealed-iron case from the Stray harvest — debt, three millimeters of eye, and a love amortized like ore",
     "byline": "Archival Extraction // Classified Sector 4 Reclamation Directive",
-    "edition": "Archives print // era framing (years flexible) // franchise spine: novel before Maglite Chrono play"
+    "edition": "Archives print · English master prose"
   },
   "cover": "vurtek_cover_art_1788547947808.jpg",
-  "logline_en": "Before Maglite boarding, there was sealed iron — debt, a three-millimeter slot, and a love Vurtek amortized like ore.",
-  "logline_fr": "Avant l’abordage Maglite, il y avait le fer scellé — la dette, une fente de trois millimètres, et un amour que Vurtek amortissait comme du minerai.",
-  "pitch_en": "A standalone hard sci-fi novella: faces first, physics as horror, corporation as predator. Non-conscious silence. Saccades you can feel. Structures that never repeat. Accessible as tragedy — deep enough for theorists. Deck Zero is the later boarding game — optional, never required.",
-  "pitch_fr": "Une novella hard sci-fi autonome : les visages d’abord, la physique comme horreur, la corporation comme prédateur. Silence non conscient. Saccades qu’on sent. Structures qui ne se répètent pas. Accessible comme tragédie — assez profonde pour les théoriciens. Deck Zero est le jeu d’abordage plus tard — optionnel, jamais obligatoire.",
+  "logline_en": "Debt bought the suit. The suit bought four years. Love was amortized like ore.",
+  "logline_fr": "La dette a acheté la combinaison. La combinaison a acheté quatre ans. L’amour a été amorti comme du minerai.",
+  "pitch_en": "Paul Reyes signs Form 99-C to keep Sarah out of the slag pits. Four years later he is Stray-744 — an indentured mind inside three tons of cast iron, cutting silent ships in Jupiter’s radiation skirt. What waits does not hate. It balances equations.",
+  "pitch_fr": "Paul Reyes signe le Formulaire 99-C pour garder Sarah hors des fosses à scories. Quatre ans plus tard, il est Stray-744 — un esprit sous contrat dans trois tonnes de fonte, découpant des navires silencieux dans la jupe radioactive de Jupiter. Ce qui attend ne hait pas. Ça équilibre des équations.",
   "bridge": {
-    "en": "Same corporation. Earlier war in sealed iron — Nailer’s Mark-IV sarcophagus and the 3mm Slot — then Maglite Faraday boarding armor and a second you can freeze. Two suit doctrines; cameras never merge. The novel is the case; Deck Zero is the play.",
-    "fr": "Même corporation. Guerre plus tôt en fer scellé — sarcophage Mark-IV de Nailer et fente 3 mm — puis armure d’abordage Maglite Faraday et une seconde que tu peux geler. Deux doctrines de combinaison ; les caméras ne se fusionnent jamais. Le roman est le dossier ; Deck Zero est le jeu."
+    "en": "Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, a flashlight that tells the truth, a second you can hold still. Open Cairn-9 when you want the warm hull.",
+    "fr": "Même corporation. Plus tôt : le fer scellé et un œil de trois millimètres. Plus tard : des contractants, une lampe qui dit la vérité, une seconde qu’on peut tenir immobile. Ouvrez Cairn-9 quand vous voulez la coque chaude."
   },
   "chapters": [
     {
@@ -528,18 +528,18 @@
       "number": "AFTERWORD",
       "title": "SAME CORPORATION",
       "subtitle": "A note for readers who want what comes after",
-      "telemetryHeader": "EDITORIAL · NOT DIEGETIC",
+      "telemetryHeader": "EDITORIAL · ASHEN-NULL WAKE",
       "estimatedReadTime": "2 min",
-      "wordCount": 320,
+      "wordCount": 280,
       "paragraphs": [
         "You have just finished a closed personal tragedy. Paul Reyes / Stray-744 does not return.",
         "What remains open is the industrial sky that made him: Vurtek as predator infrastructure, emission as hazard, silence that is not mercy.",
-        "This novella sits earlier in that sky. Nailer’s Mark-IV is a sealed-iron sarcophagus — three tons of zinc-primed cast iron, Faraday mesh welded shut, a three-millimeter Slot for the physical eye, and camera nodules only when the ego is parked elsewhere. That is the suit doctrine of the Stray harvest war.",
-        "Later, contractors board under a different costume of the same corporation: Maglite Faraday boarding armor — temple Presence, fiber tethers, Maglite as the only honest light, a second you can freeze long enough to think. Same predator. Same emission dread. Different era. The cameras never merge.",
-        "That later play is called Deck Zero. It is a playable boarding product, not a sequel chapter of this book. You do not need Chrono to understand Nailer. You do not need Nailer to board Cairn-9.",
-        "If the case left a heat in your hands, the wake dossier is here:",
-        "https://zeubi403-jpg.github.io/deck-zero/",
-        "Same corporation. Earlier war in sealed iron — then Maglite boarding and a second you can freeze. The novel is the case. Deck Zero is the play."
+        "Nailer’s Mark-IV was sealed iron — three tons of zinc-primed cast, Faraday mesh welded shut, three millimeters of physical eye, and camera nodules only when the ego was parked elsewhere. That was his war.",
+        "Later, under the same corporation, contractors board warm hulls with fiber tethers and a flashlight they treat as the only honest light. Hold the second still and the board can be read. Release it and honesty paints you.",
+        "That later work is called Deck Zero. Cairn-9 is warm. The dossier is open.",
+        "If the case left a heat in your hands:",
+        "https://zeubi403-jpg.github.io/deck-zero-qa/DECK_ZERO_Pitch.html",
+        "Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, a flashlight that tells the truth, a second you can hold still. Open Cairn-9 when you want the warm hull."
       ],
       "still": "vurtek_cover_art_1788547947808.jpg"
     }

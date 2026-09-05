@@ -1,18 +1,18 @@
 {
-  "title_en": "Archives Lexicon — for theorists who want the map",
+  "title_en": "Archives Lexicon — for readers who want the map",
   "title_fr": "Lexique Archives — pour ceux qui veulent la carte",
-  "intro_en": "Optional. The novella stands alone without this page. These entries name the physics already in the prose — for readers who came for Blindsight-grade thesis, Fermi quiet, Filter talk, saccades, and aperiodic structure. We do not preach Dark Forest as gospel; we show a quieter, colder engine.",
-  "intro_fr": "Optionnel. La novella se tient sans cette page. Ces entrées nomment la physique déjà dans la prose — pour les lecteurs venus pour la thèse dure, le ciel de Fermi, le Filtre, les saccades, les pavages apériodiques.",
+  "intro_en": "The novella stands alone without this page. These entries name the physics already in the prose — Fermi quiet, Filter talk, saccades, aperiodic structure. We do not preach Dark Forest as gospel; we show a quieter, colder engine.",
+  "intro_fr": "La novella se tient sans cette page. Ces entrées nomment la physique déjà dans la prose — ciel de Fermi, Filtre, saccades, pavages apériodiques.",
   "entries": [
     {
       "id": "saccadic",
       "title": "Saccadic masking / Displaced Gaze",
-      "body": "On Earth, the brain edits out the blur between eye-jumps so consciousness feels continuous. In the Mark-IV, the jump between Slot and camera nodule is not edited — you feel the cut. Displaced Gaze is the Stray technique of parking the 'I' in a CRT nodule. The interactive page of that name is an optional feel of Chapter 01 (The Third Millimeter) — not a second story. Thesis kin to Watts-grade perception horror: awareness is a kludge, not a throne."
+      "body": "On Earth, the brain edits out the blur between eye-jumps so consciousness feels continuous. In the Mark-IV, the jump between Slot and camera nodule is not edited — you feel the cut. Displaced Gaze is the Stray technique of parking the 'I' in a CRT nodule. The interactive page of that name lets you feel Chapter 01 (The Third Millimeter)."
     },
     {
       "id": "suits",
-      "title": "Suit succession · 3mm then Maglite",
-      "body": "Nailer’s Mark-IV sealed-iron sarcophagus (3mm Slot, camera nodules, Faraday mesh welded shut) is the earlier harvest-war doctrine. Deck Zero Maglite Faraday boarding armor (temple Presence, fiber, Chrono freeze) is the later Ashen-Null recovery suit. Same corporation and emission philosophy; different era costume. Cameras never merge — do not read the sarcophagus as the playable Maglite Presence."
+      "title": "Sealed iron · then honest light",
+      "body": "Nailer’s Mark-IV was sealed iron: 3mm Slot, camera nodules, Faraday mesh welded shut. Later, under the same corporation, Ashen-Null contractors board with fiber tethers and a flashlight they treat as the only honest light — Maglite as signature, Chrono as a second you can hold still. Same emission philosophy. Different war. Different eye."
     },
     {
       "id": "aperiodic",
@@ -32,7 +32,7 @@
     {
       "id": "emission",
       "title": "Cognitive emission as lure",
-      "body": "Thought, radio, panic, poetry — structured entropy. Faraday weave and neuro-slurry are survival tools. Later Maglite boarding treats light itself as signature. Same corporation. Different suit doctrine."
+      "body": "Thought, radio, panic, poetry — structured entropy. Faraday weave and neuro-slurry are survival tools. Later contractors learn that honest light itself paints a signature. Same corporation. Different suit. Same sky."
     },
     {
       "id": "form99",
@@ -41,8 +41,8 @@
     },
     {
       "id": "deckzero",
-      "title": "Deck Zero (later play)",
-      "body": "Playable boarding: Maglite temple Presence, Chrono freeze, Cairn-9. Not a sequel chapter of Nailer’s plot. Same predator corp, same emission dread, different war and suit. Novel → optional Deep. Game never requires the book."
+      "title": "Deck Zero (later work)",
+      "body": "Cairn-9. Warm hull. Maglite as honest light. Chrono as a second you can hold still. Not a sequel chapter of Nailer’s plot — same predator corp, same emission dread, different war. The novel stands alone. The dossier stands alone."
     }
   ]
 }

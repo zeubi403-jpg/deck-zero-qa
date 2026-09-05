@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Deck Zero</title>
-<meta name="description" content="Deck Zero — one franchise: Silent Running (hard sci-fi novella) then Maglite Chrono boarding play. Ashen-Null optical terminal.">
+<meta name="description" content="Cairn-9 burns reverse. Hull still warm. Ashen-Null optical terminal — read The Silent Running, or open the Cairn-9 dossier.">
 <meta name="theme-color" content="#020805">
 <meta name="color-scheme" content="dark">
 <meta name="robots" content="index,follow">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="og.png">
-<meta property="og:title" content="Deck Zero · Novel + Maglite Chrono">
-<meta property="og:description" content="Same corporation. Earlier war in sealed iron — then Maglite boarding. Read Silent Running, or open the 2118 Cairn-9 Brief.">
+<meta property="og:title" content="Deck Zero · Ashen-Null">
+<meta property="og:description" content="Cairn-9 burns reverse. No flight plan. No distress. Hull still warm.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="og.png">
 <meta property="og:site_name" content="Deck Zero">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Deck Zero · Novel + Maglite Chrono">
-<meta name="twitter:description" content="Same corporation. Earlier war in sealed iron — then Maglite boarding. Read Silent Running, or open the 2118 Cairn-9 Brief.">
+<meta name="twitter:title" content="Deck Zero · Ashen-Null">
+<meta name="twitter:description" content="Cairn-9 burns reverse. No flight plan. No distress. Hull still warm.">
 <meta name="twitter:image" content="og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -635,6 +635,21 @@ body.optics-lo .quote{animation:none!important}
 .gate a.read{
   border-color:rgba(77,255,154,.55);background:rgba(77,255,154,.14);
 }
+.look-still{
+  display:block;margin:0 0 1.35rem;max-width:36rem;
+  border:1px solid var(--line);background:rgba(4,14,10,.55);
+  text-decoration:none;overflow:hidden;
+  transition:border-color .15s,box-shadow .15s;
+}
+.look-still:hover{border-color:var(--phos);box-shadow:0 0 28px rgba(77,255,154,.12)}
+.look-still img{
+  display:block;width:100%;height:auto;max-height:220px;object-fit:cover;
+  filter:saturate(.85) contrast(1.05);
+}
+.look-still .cap{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--phos-dim);padding:.55rem .75rem;border-top:1px solid var(--line);
+}
 .secondary{
   display:flex;flex-wrap:wrap;gap:.55rem .9rem;margin:0 0 1.25rem;
   font-family:var(--mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
@@ -712,8 +727,8 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
 <div class="boot" id="boot" aria-live="polite">
   <div class="boot-inner">
     <div class="boot-brand">Deck Zero</div>
-    <div class="boot-sub" data-lang="en">Ashen-Null · optical channel · novel + Maglite Brief</div>
-    <div class="boot-sub" data-lang="fr">Ashen-Null · canal optique · roman + Brief Maglite</div>
+  <div class="boot-sub" data-lang="en">Ashen-Null · optical channel · fiber only</div>
+  <div class="boot-sub" data-lang="fr">Ashen-Null · canal optique · fibre seule</div>
     <div class="boot-lines" id="bootLines"></div>
     <button type="button" class="boot-skip" id="bootSkip">
       <span data-lang="en">Enter the glass</span>
@@ -756,21 +771,27 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
   <div class="stamp" data-lang="en">Ashen-Null · optical terminal</div>
   <div class="stamp" data-lang="fr">Ashen-Null · terminal optique</div>
 
-  <p class="lead" data-lang="en">One franchise. A hard sci-fi novella — then Maglite Chrono boarding play. Same corporation. Two eras. One silence that was never empty.</p>
-  <p class="lead" data-lang="fr">Une franchise. Une novella hard sci-fi — puis l’abordage Maglite Chrono. Même corporation. Deux ères. Un silence qui n’a jamais été vide.</p>
-
   <p class="hook" data-lang="en">Cairn-9 burns reverse. No flight plan. No distress. Hull still warm.</p>
   <p class="hook" data-lang="fr">Cairn-9 brûle en rétro. Pas de plan de vol. Pas de détresse. Coque encore chaude.</p>
 
+  <p class="lead" data-lang="en">Three contractors. Fiber only. When the second moves, only one light stays honest — and honesty is a signature.</p>
+  <p class="lead" data-lang="fr">Trois contractants. Fibre seule. Quand la seconde bouge, une seule lumière reste honnête — et l’honnêteté est une signature.</p>
+
+  <a class="look-still" id="gateLook" href="DECK_ZERO_Pitch.html">
+    <img src="media/look/01_maglite_soft_corridor.png" width="960" height="540" alt="Corridor lit by a single Maglite beam">
+    <div class="cap" data-lang="en">Soft corridor · Maglite truth · open Cairn-9</div>
+    <div class="cap" data-lang="fr">Couloir Soft · vérité Maglite · ouvrir Cairn-9</div>
+  </a>
+
   <div class="era" data-lang="en">
-    <div><b>Earlier</b> · <i>The Silent Running</i> — sealed-iron harvest case (novella). Nailer’s Mark-IV: three-ton iron sarcophagus, 3mm Slot — doctrine suit of that war.</div>
-    <div class="arrow">↓ same corporation · Vurtek · suit law changes</div>
-    <div><b>Later</b> · Deck Zero — Maglite Faraday boarding armor · Chrono · Cairn-9 Brief (play). Same predator corp; different era costume. Cameras never merge.</div>
+    <div><b>Earlier</b> · <i>The Silent Running</i> — sealed iron · Nailer · three millimeters of eye</div>
+    <div class="arrow">↓ same corporation · Vurtek</div>
+    <div><b>Later</b> · Deck Zero — contractors · a flashlight that tells the truth · a second you can hold still · Cairn-9</div>
   </div>
   <div class="era" data-lang="fr">
-    <div><b>Plus tôt</b> · <i>The Silent Running</i> — dossier fer scellé (novella). Mark-IV de Nailer : sarcophage de fer, fente 3 mm — combinaison de cette guerre.</div>
-    <div class="arrow">↓ même corporation · Vurtek · la loi des combinaisons change</div>
-    <div><b>Plus tard</b> · Deck Zero — armure d’abordage Maglite Faraday · Chrono · Brief Cairn-9 (jeu). Même prédateur ; autre costume d’ère. Les caméras ne se fusionnent jamais.</div>
+    <div><b>Plus tôt</b> · <i>The Silent Running</i> — fer scellé · Nailer · trois millimètres d’œil</div>
+    <div class="arrow">↓ même corporation · Vurtek</div>
+    <div><b>Plus tard</b> · Deck Zero — contractants · une lampe qui dit la vérité · une seconde qu’on peut tenir · Cairn-9</div>
   </div>
 
   <nav class="gate" aria-label="Primary paths">
@@ -778,16 +799,16 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
       <div class="k" data-lang="en">1 · Read</div>
       <div class="k" data-lang="fr">1 · Lire</div>
       <div class="t">The Silent Running</div>
-      <div class="d" data-lang="en">Full hard sci-fi novella. Sealed-iron prequel — the case before Maglite boarding. Start here for the story.</div>
-      <div class="d" data-lang="fr">Novella hard sci-fi complète. Préquelle fer scellé — le dossier avant l’abordage Maglite. Commencez ici pour l’histoire.</div>
+      <div class="d" data-lang="en">Debt bought the suit. Love was amortized like ore. The sealed-iron case — start here for the story.</div>
+      <div class="d" data-lang="fr">La dette a acheté la combinaison. L’amour a été amorti comme du minerai. Le dossier fer scellé — commencez ici.</div>
     </a>
     <a class="play" id="gateBrief" href="DECK_ZERO_Pitch.html">
-      <div class="k" data-lang="en">2 · Play Brief</div>
-      <div class="k" data-lang="fr">2 · Brief jeu</div>
-      <div class="t" data-lang="en">Open Cairn-9 dossier</div>
-      <div class="t" data-lang="fr">Ouvrir le dossier Cairn-9</div>
-      <div class="d" data-lang="en">Maglite · Chrono · Corpse-Sky. The boarding Brief for the playable game — you do not need the novel to open Cairn-9.</div>
-      <div class="d" data-lang="fr">Maglite · Chrono · Ciel-Cadavre. Le Brief d’abordage pour le jeu — le roman n’est pas requis pour ouvrir Cairn-9.</div>
+      <div class="k" data-lang="en">2 · Dossier</div>
+      <div class="k" data-lang="fr">2 · Dossier</div>
+      <div class="t" data-lang="en">Open Cairn-9</div>
+      <div class="t" data-lang="fr">Ouvrir Cairn-9</div>
+      <div class="d" data-lang="en">Warm hull. Honest light. A second you can hold still. What waits does not answer as a mind answers.</div>
+      <div class="d" data-lang="fr">Coque chaude. Lumière honnête. Une seconde qu’on peut tenir. Ce qui attend ne répond pas comme un esprit.</div>
     </a>
   </nav>
 
@@ -800,8 +821,8 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
     <cite>Cdt Ilya Rostova · Ashen-Null · 2093</cite>
   </blockquote>
 
-  <p class="hook capsule" data-lang="en">In play: freeze the second to read the board; release it and only the Maglite stays honest — and honesty is a signature. What waits does not answer as a mind answers.</p>
-  <p class="hook capsule" data-lang="fr">En jeu : gélez la seconde pour lire le tableau ; relâchez — seule la Maglite reste honnête, et l’honnêteté est une signature. Ce qui attend ne répond pas comme un esprit.</p>
+  <p class="hook capsule" data-lang="en">Hold the second still to read the board. Release it and only the Maglite stays honest. What waits does not answer as a mind answers.</p>
+  <p class="hook capsule" data-lang="fr">Tenez la seconde immobile pour lire le tableau. Relâchez — seule la Maglite reste honnête. Ce qui attend ne répond pas comme un esprit.</p>
 
   <div class="resume" id="resumeStrip" hidden>
     <span data-lang="en">Resume on this glass</span>
@@ -810,12 +831,12 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
   </div>
 
   <nav class="secondary" aria-label="More">
-    <a id="secGaze" href="ARCHIVES_Gaze.html" data-lang="en">Feel Ch.01 · Displaced Gaze (optional)</a>
-    <a id="secGazeFr" href="ARCHIVES_Gaze.html" data-lang="fr">Sentir Ch.01 · Regard déplacé (optionnel)</a>
-    <a id="secLex" href="ARCHIVES_Lexicon.html" data-lang="en">Hard-SF lexicon (optional)</a>
-    <a id="secLexFr" href="ARCHIVES_Lexicon.html" data-lang="fr">Lexique hard-SF (optionnel)</a>
-    <a id="century" href="DECK_ZERO_Pitch.html#9" data-lang="en">Optional century timeline</a>
-    <a id="century-fr" href="DECK_ZERO_Pitch.html#9" data-lang="fr">Chronologie du siècle (optionnel)</a>
+    <a id="secGaze" href="ARCHIVES_Gaze.html" data-lang="en">Feel Ch.01 · Displaced Gaze</a>
+    <a id="secGazeFr" href="ARCHIVES_Gaze.html" data-lang="fr">Sentir Ch.01 · Regard déplacé</a>
+    <a id="secLex" href="ARCHIVES_Lexicon.html" data-lang="en">Hard-SF lexicon</a>
+    <a id="secLexFr" href="ARCHIVES_Lexicon.html" data-lang="fr">Lexique hard-SF</a>
+    <a id="century" href="DECK_ZERO_Pitch.html#9" data-lang="en">Century spine</a>
+    <a id="century-fr" href="DECK_ZERO_Pitch.html#9" data-lang="fr">Axe du siècle</a>
   </nav>
 
   <p class="foot-clear" data-lang="en">Ashen-Null optical channel · fiber only · Menu (top right) for whole site · not a public network</p>
@@ -856,10 +877,10 @@ html.boot-done .boot{opacity:0;visibility:hidden;pointer-events:none}
   function setLang(lang) {
     lang = lang === "fr" ? "fr" : "en";
     document.documentElement.lang = lang;
-    document.title = lang === "fr" ? "Deck Zero · Roman + Maglite" : "Deck Zero · Novel + Maglite Chrono";
+    document.title = lang === "fr" ? "Deck Zero · Ashen-Null" : "Deck Zero · Ashen-Null";
     btns.forEach((b) => b.classList.toggle("on", b.dataset.setLang === lang));
     const q = "?lang=" + lang;
-    ["gateNovel", "gateBrief", "secGaze", "secGazeFr", "secLex", "secLexFr"].forEach(function (id) {
+    ["gateNovel", "gateBrief", "gateLook", "secGaze", "secGazeFr", "secLex", "secLexFr"].forEach(function (id) {
       const el = document.getElementById(id);
       if (!el) return;
       const base = el.getAttribute("href").split("?")[0].split("#")[0];

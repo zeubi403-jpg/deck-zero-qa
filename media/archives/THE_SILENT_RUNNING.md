@@ -1,17 +1,19 @@
 # VURTEK ARCHIVES: THE SILENT RUNNING
 
-*A sealed-iron case from the Stray harvest era — literary prequel to Deck Zero Maglite boarding*
+*A sealed-iron case from the Stray harvest — debt, three millimeters of eye, and a love amortized like ore*
 
 **Archival Extraction // Classified Sector 4 Reclamation Directive**  
-*Archives print // era framing (years flexible) // franchise spine: novel before Maglite Chrono play*
+*Archives print · English master prose*
 
 ---
 
 ## Reader note
 
-A standalone hard sci-fi novella: faces first, physics as horror, corporation as predator. Non-conscious silence. Saccades you can feel. Structures that never repeat. Accessible as tragedy — deep enough for theorists. Deck Zero is the later boarding game — optional, never required.
+Debt bought the suit. The suit bought four years. Love was amortized like ore.
 
-Same corporation. Earlier war in sealed iron — Nailer’s Mark-IV sarcophagus and the 3mm Slot — then Maglite Faraday boarding armor and a second you can freeze. Two suit doctrines; cameras never merge. The novel is the case; Deck Zero is the play.
+Paul Reyes signs Form 99-C to keep Sarah out of the slag pits. Four years later he is Stray-744 — an indentured mind inside three tons of cast iron, cutting silent ships in Jupiter’s radiation skirt. What waits does not hate. It balances equations.
+
+Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, a flashlight that tells the truth, a second you can hold still. Open Cairn-9 when you want the warm hull.
 
 ---
 
@@ -906,22 +908,22 @@ It is not enough to finish one.
 
 ### *A note for readers who want what comes after*
 
-`EDITORIAL · NOT DIEGETIC`
+`EDITORIAL · ASHEN-NULL WAKE`
 
 You have just finished a closed personal tragedy. Paul Reyes / Stray-744 does not return.
 
 What remains open is the industrial sky that made him: Vurtek as predator infrastructure, emission as hazard, silence that is not mercy.
 
-This novella sits earlier in that sky. Nailer’s Mark-IV is a sealed-iron sarcophagus — three tons of zinc-primed cast iron, Faraday mesh welded shut, a three-millimeter Slot for the physical eye, and camera nodules only when the ego is parked elsewhere. That is the suit doctrine of the Stray harvest war.
+Nailer’s Mark-IV was sealed iron — three tons of zinc-primed cast, Faraday mesh welded shut, three millimeters of physical eye, and camera nodules only when the ego was parked elsewhere. That was his war.
 
-Later, contractors board under a different costume of the same corporation: Maglite Faraday boarding armor — temple Presence, fiber tethers, Maglite as the only honest light, a second you can freeze long enough to think. Same predator. Same emission dread. Different era. The cameras never merge.
+Later, under the same corporation, contractors board warm hulls with fiber tethers and a flashlight they treat as the only honest light. Hold the second still and the board can be read. Release it and honesty paints you.
 
-That later play is called Deck Zero. It is a playable boarding product, not a sequel chapter of this book. You do not need Chrono to understand Nailer. You do not need Nailer to board Cairn-9.
+That later work is called Deck Zero. Cairn-9 is warm. The dossier is open.
 
-If the case left a heat in your hands, the wake dossier is here:
+If the case left a heat in your hands:
 
-https://zeubi403-jpg.github.io/deck-zero/
+https://zeubi403-jpg.github.io/deck-zero-qa/DECK_ZERO_Pitch.html
 
-Same corporation. Earlier war in sealed iron — then Maglite boarding and a second you can freeze. The novel is the case. Deck Zero is the play.
+Same corporation. Earlier: sealed iron and a three-millimeter eye. Later: contractors, a flashlight that tells the truth, a second you can hold still. Open Cairn-9 when you want the warm hull.
 
 ---

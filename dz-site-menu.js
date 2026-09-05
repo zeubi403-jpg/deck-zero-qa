@@ -136,32 +136,32 @@
         k: fr ? "Lire · Roman" : "Read · Novel",
         t: "The Silent Running",
         d: fr
-          ? "Novella hard sci-fi complète. Préquelle fer scellé — le dossier avant Maglite."
-          : "Full hard sci-fi novella. Sealed-iron prequel — the case before Maglite."
+          ? "La dette a acheté la combinaison. L’amour amorti comme du minerai."
+          : "Debt bought the suit. Love amortized like ore."
       },
       {
         href: "DECK_ZERO_Pitch.html",
-        k: fr ? "Jouer · Brief" : "Play · Brief",
-        t: fr ? "Ouvrir le dossier" : "Open dossier",
+        k: fr ? "Dossier · Cairn-9" : "Dossier · Cairn-9",
+        t: fr ? "Ouvrir Cairn-9" : "Open Cairn-9",
         d: fr
-          ? "Maglite · Chrono · Cairn-9. Le Brief d’abordage du jeu."
-          : "Maglite · Chrono · Cairn-9. The boarding Brief for the playable game."
+          ? "Coque chaude. Lumière honnête. Une seconde qu’on peut tenir."
+          : "Warm hull. Honest light. A second you can hold still."
       },
       {
         href: "ARCHIVES_Gaze.html",
         k: fr ? "Sentir · Regard" : "Feel · Gaze",
         t: fr ? "Regard déplacé" : "Displaced Gaze",
         d: fr
-          ? "Sensation optionnelle : fente 3 mm ↔ caméra. Chapitre 01."
-          : "Optional feel: 3mm Slot ↔ camera. Chapter 01."
+          ? "Sentir la coupe : fente 3 mm ↔ caméra. Chapitre 01."
+          : "Feel the cut: 3mm Slot ↔ camera. Chapter 01."
       },
       {
         href: "ARCHIVES_Lexicon.html",
         k: fr ? "Profond · Thèse" : "Deep · Thesis",
         t: fr ? "Lexique hard-SF" : "Hard-SF lexicon",
         d: fr
-          ? "Fermi, Filtre, saccades, pavages — optionnel."
-          : "Fermi, Filter, saccades, tiling — optional."
+          ? "Fermi, Filtre, saccades, pavages."
+          : "Fermi, Filter, saccades, tiling."
       }
     ];
     items.forEach(function (it) {
